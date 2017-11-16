@@ -23,14 +23,24 @@ app.set('view engine', 'ejs');
 
 // set the home page route
 app.get('/', function(req, res) {
-
 // html render automatically looks in the views folder
 res.render('index');
 	
 });
 
+/*	
+ * in order to read HTTP POST data , we have to use "body-parser" node module. 
+ * body-parser is a piece of express middleware that reads a form's input and stores it 
+ * as a javascript object accessible through req.body
+*/
 app.use(bodyParser.json({limit: '3mb'}));
 app.use(bodyParser.urlencoded({limit: '3mb'}));
+
+// =======================
+// API ROUTES 
+// =======================
+var userRoutes = require('./routes/api/user/user-index');
+app.use('/api/user', userRoutes);  
 
 app.listen(port, function() {
 	console.log('Our app is running on http://localhost:' + port);
