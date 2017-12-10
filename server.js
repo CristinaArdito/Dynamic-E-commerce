@@ -25,7 +25,6 @@ app.set('view engine', 'ejs');
 app.get('/', function(req, res) {
 // html render automatically looks in the views folder
 res.render('index');
-	
 });
 
 /*	
