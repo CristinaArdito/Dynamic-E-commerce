@@ -44,21 +44,21 @@ this.addUser = function(user) {
 	 */
 
 	var deferred = Q.defer();
-	if(!user.password || user.password = "" || user.password.length < 4) {
+	if(!user.password || user.password == "" || user.password.length < 4) {
 		deferred.reject('La password non può essere vuota o inferiore a 4 caratteri.');
 		return deferred.promise;
 	}
-	if(!user.name || user.name = "") {
+	if(!user.name || user.name == "") {
 		deferred.reject('Il nome non può essere vuoto.');
 		return deferred.promise;		
 	}
-	if(!user.email || user.email = "") {
+	if(!user.email || user.email == "") {
 		deferred.reject('La mail non può essere vuota.');
 		return deferred.promise;		
 	}
 
 	var saveuser = new User(user);
-	saveuser.save();
+	saveuser.save()
     .then(function(user) {
         console.log("Utente salvato");
         //Convert a JavaScript object into a string with JSON.stringify().
