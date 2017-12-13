@@ -16,3 +16,16 @@ module.exports = user_utilities;
 this.ERR_API_NOT_FOUND = 'ERR_API_NOT_FOUND';
 this.ERR_API_WRONG_PSW = 'ERR_API_WRONG_PSW';
 this.ERR_MISSING_DATA  = 'ERR_MISSING_DATA';
+
+this.addUser = function(name, password, email) {
+	return db_utilities.addUser({ name: name,
+								  password: password,
+								  email: email,
+								  admin: false
+
+	});
+}
+
+this.login = function(email, pass) {
+	
+}
