@@ -104,9 +104,8 @@
 .header .logo {
     height: 100%;
     width: 20%;
-    background: url("../img/apple.png") 2px no-repeat;
-    background-size: 20%;
-    margin-left: 2%;
+    background: url("../img/think.jpg") 20px no-repeat;
+    background-size: 80%;
 }
 
 .menu .homeicon {
@@ -126,8 +125,8 @@
 
 .menu ul ul {
     position: absolute;
-    top: 93%;
-    left: -40%;
+    top: 80%;
+    left: 15%;
     visibility: hidden;
 }
 
@@ -162,6 +161,14 @@
     list-style: none;  
 }
 
+.menu2 li {
+    z-index: 999;
+    position: relative;
+    width: 80%;
+    text-align: center;
+    list-style: none;  
+}
+
 .menu li a {
     color: #FFF;
     padding: 13%;
@@ -182,7 +189,14 @@
 }
 
 .menu ul ul li a {
-    background-color: #37474f;
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+}
+
+.menu ul ul li:last-child a {
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
 }
 
 .menu ul ul li a:hover {
