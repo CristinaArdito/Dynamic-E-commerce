@@ -1,0 +1,236 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.header {
+  width: 100%;
+  height: 95px;
+  position: relative;
+  display: block;
+  background-position: top;
+  background-color: #000;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.header .searchbox {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 20%;
+}
+
+.header .searchbox form input[type="search"] {
+    vertical-align: top;
+    margin-top: 15px;
+    display: inline-block;
+    padding: 7px;
+    -webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;
+    -moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;
+    -ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;
+    -o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;
+    box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    border: 1px solid #c8c8c8;
+    color: #777;
+    font: 13px Helvetica, Arial, sans-serif;
+    width: 80%;
+}
+
+.header .searchbox form input:focus {
+    -webkit-box-shadow: 0 0 2px #ed1c24 inset;
+    -moz-box-shadow: 0 0 2px #ed1c24 inset;
+    -ms-box-shadow: 0 0 2px #ed1c24 inset;
+    -o-box-shadow: 0 0 2px #ed1c24 inset;
+    box-shadow: 0 0 2px #ed1c24 inset;
+    background-color: #fff;
+    border: 1px solid #ed1c24;
+    outline: none;
+}
+
+.header .searchbox button {
+    margin-top: 15px;
+    margin-left: -5px;
+    display: inline-block;
+    background-color: rgb(254,231,154) !important; 
+    background-color: -moz-linear-gradient(top,  rgba(254,231,154,1) 0%, rgba(254,193,81,1) 100%) !important;
+    background-color: -webkit-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%) !important;
+    background-color: -o-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%) !important;
+    background-color: -ms-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%) !important;
+    background-color: linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%) !important;
+    background: url("../img/icon/searchbox.ico") 15px no-repeat;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec151', endColorstr='#fee79a',GradientType=0 );
+    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;
+    -moz-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;
+    -ms-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;
+    -o-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;
+    border: 1px solid #D69E31;
+    color: #85592e;
+    cursor: pointer;
+    height: 33px;
+    width: 50px;
+}
+
+.searchbox button[type="submit"]:hover {
+    background-color: rgb(254,193,81) !important;
+    background-color: -moz-linear-gradient(top,  rgba(254,193,81,1) 0%, rgba(254,231,154,1) 100%) !important;
+    background-color: -webkit-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%) !important;
+    background-color: -o-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%) !important;
+    background-color: -ms-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%) !important;
+    background-color: linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec151', endColorstr='#fee79a',GradientType=0 );
+    background: url("../img/icon/searchbox.ico") 15px no-repeat;
+}
+
+.header .menu {
+    width: 60%;
+    height: 50%;
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 20%;
+}
+
+.header .logo {
+    height: 100%;
+    width: 20%;
+    background: url("../img/apple.png") 2px no-repeat;
+    background-size: 20%;
+    margin-left: 2%;
+}
+
+.menu .homeicon {
+	background: url("../img/icon/home.png") no-repeat;
+    top: 50%;
+	left: 80%;
+    position: absolute;
+    position: block;
+    width: 100%;
+    height: 100%; 
+}
+
+.menu .home {
+	margin-top: 1.5%;
+	width: 50px;
+}
+
+.menu ul ul {
+    position: absolute;
+    top: 93%;
+    left: -40%;
+    visibility: hidden;
+}
+
+.menu .nav-center li{
+    left: -3%;
+}
+
+.menu .down {
+   background: url("../img/icon/arrows.png")  no-repeat;
+   background-position: left 112px top 27px;
+   cursor: pointer;
+}
+
+.menu .down2 {
+   background: url("../img/icon/arrows.png")  no-repeat;
+   background-position: left 132px top 27px;
+   cursor: pointer;
+}
+
+.menu .down3 {
+   background: url("../img/icon/arrows.png")  no-repeat;
+   background-position: left 118px top 27px;
+   cursor: pointer;
+}
+
+.menu li {
+    z-index: 999;
+    position: relative;
+    float: left;
+    width: 13%;
+    text-align: center;
+    list-style: none;  
+}
+
+.menu li a {
+    color: #FFF;
+    padding: 13%;
+    text-decoration: none;
+    display: block;
+}
+
+.menu li a:hover {
+    text-shadow: 0px 0px 1px #FFF;
+}
+
+.menu li ul a:hover {
+    text-shadow: 0px 0px 0px #FFF;
+}
+
+.menu ul li:hover ul {
+    visibility: visible;
+}
+
+.menu ul ul li a {
+    background-color: #37474f;
+}
+
+.menu ul ul li a:hover {
+    background-color: #232f3e;
+}
+
+.header .nav-right .usericon {
+	background: url("../img/icon/people.png") no-repeat;
+    top: 20%;
+    left: 102%;
+    position: absolute;
+    position: block;
+    width: 10%;
+    height: 100%; 
+}
+
+.header .nav-right .userText {
+	color: #F8E739;
+	text-decoration: none;
+    top: 35%;
+    left: 105%;
+    position: absolute;
+    position: block;
+}
+
+.header .nav-right .userText:hover {
+    text-shadow: 0px 0px 0px #F8E739;
+}
+
+.header .shopCar .shopicon {
+    background: url("../img/icon/shopping-cart.png") no-repeat;
+    top: 60%;
+    left: 89%;
+    position: absolute;
+    position: block;
+    width: 10%;
+    height: 100%; 
+}
+
+.header .shopCar .shopText{ 
+    color: White;  
+    text-decoration: none;
+    position: absolute;
+    position: block;
+    top: 67%;
+    left: 91%;
+}
+
+.shopCar .shopText:hover {
+    text-shadow: 0px 0px 0px #FFF;
+}

@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="././public/css/style.css"/>
+<header>           
+            <div class="header">
+                <div class="logo">
+                </div>
+            <div class="searchbox">
+             <form ng-controller="searchProductHomeController">
+             <input type="search" class="form-control" id="mainSearchBox" placeholder="Search"/>
+                 <button type="submit" id="submitButtonMain" class="idbutton" ng-click="searchProducts()"></button>
+            </form>
+            </div>
+            <div class="menu" ng-controller="mainController">
+            <div class="nav-center">
+                <ul>
+                    <li class="home"><a href="#!/"><div class="homeicon"></div></a></li>
+                    <li><a class="down" href="#!/offers">Gaming</a>
+	                    <ul>
+	                    	<li>Mouse</li>
+	                    </ul>
+	                </li>    
+                    <li><a class="down" href="#!/">Hardware</a></li>
+                    <li><a class="down3" href="#!/">Periferiche</a></li>
+                    <li><a class="down2" href="#!/">Notebook & PC</a></li>
+                    <li><a class="down2" href="#!/">Monitor & PC</a></li>
+                    <li><a class="down" href="#!/">Software</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">   
+                    <div class="usericon"></div><a class="userText" href="#!/login">Accedi</a>
+            </div>
+            </div>
+            <div class="shopCar">
+                <div class="shopicon"></div><a href="#!/cart" class="shopText">Carrello</a>
+            </div>
+            </div>
+            
+        </header>
