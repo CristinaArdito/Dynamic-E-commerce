@@ -36,7 +36,11 @@ res.render('index');
  * as a javascript object accessible through req.body
 */
 app.use(bodyParser.json({limit: '3mb'}));
-app.use(bodyParser.urlencoded({limit: '3mb'}));
+/* it uses the qs module to parse the body which allows for a nested array like 
+ * syntax to be parsed such as test[foo][bar]=baz (which becomes 
+ * {'test': {'foo': {'bar': 'baz'}}} 
+ */
+app.use(bodyParser.urlencoded({extended: true, limit: '3mb'}));
 
 // =======================
 // API ROUTES 
