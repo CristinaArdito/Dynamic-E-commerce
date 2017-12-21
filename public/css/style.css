@@ -214,7 +214,7 @@
 }
 
 .header .nav-right .userText {
-	color: #F8E739;
+	color: rgb(254,231,154) !important; ;
 	text-decoration: none;
     top: 35%;
     left: 105%;
