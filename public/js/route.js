@@ -1,6 +1,7 @@
 angular.module('myApp.controllers', []); 
+angular.module('myApp.services', []);
 
-angular.module('kriapp', ['myApp.controllers', 'ngRoute', 'ui.router'])
+angular.module('kriapp', ['myApp.services', 'myApp.controllers', 'ngRoute', 'ui.router'])
 .run(function(){
 
 })
