@@ -10,7 +10,12 @@ angular.module('kriapp', ['myApp.controllers', 'ngRoute', 'ui.router'])
             // route for the home page
             .when('/', {
                 templateUrl : 'views/front-end/home.ejs',
+                controller: 'mainController'
             })     
+            .when('/login', {
+                templateUrl : 'views/front-end/login.ejs',
+                controller: 'loginController'
+            })  
 
 
 /***** ROUTE VIEW UI *****/
