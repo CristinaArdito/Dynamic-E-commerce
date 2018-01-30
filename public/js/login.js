@@ -1,6 +1,7 @@
 var kriApp = angular.module('kriapp');
 // create the controller and inject Angular's $scope
-kriApp.controller('loginController', ['$scope', '$state', 'userService', function($scope, $state, userService)
+kriApp.controller('loginController', ['$scope', '$state', '$compile', 'userService',  
+  function($scope, $state, $compile, userService)
    {
     $scope.email;
     $scope.password;
@@ -15,7 +16,9 @@ kriApp.controller('loginController', ['$scope', '$state', 'userService', functio
                })
           .catch(function(err)
                 {
-                 alert("Credenziali errate"); 
+                 //alert("Credenziali errate"); 
+                 var error = '<div class="error"><a>Credenziali Errate</a></div>'
+                 angular.element(document.getElementById('error')).append($compile(error)($scope));
                 });
       }
    }]);
