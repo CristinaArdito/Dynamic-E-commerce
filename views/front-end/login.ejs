@@ -1,1 +1,32 @@
-a
+<link rel="stylesheet" href="././public/css/stylelogin.css"/>
+
+<div class = "cont">
+	<h1>Autenticazione</h1>
+	<hr>
+	<div class = "form">
+		<h3>Sei già registrato?</h3>
+		<hr>
+		    <form>
+		        <div class="form-group">
+		        <label for="nome">Indirizzo email</label><br>
+		        <input type="text" class="form-control"
+		               ng-model="email"
+		               size="50"
+		               id="nome" name="email" required>
+		        </div>
+		        <div class="form-group">
+		        <label for="psw">Password</label><br>
+		        <input type="password" class="form-control"
+		               ng-model="password"
+		               size="50"
+		               id="psw" name="password" required>
+		        </div>
+		    <button type="submit" id="submitbutton" 
+		            class="btn btn-default"  ng-click="login()"><div class="entra">Entra</div></button>
+		    </form>
+		     &nbsp;&nbsp;
+  			 <div class="button">
+						<a href="#!/signup" class="fa fa-signup" title = "Registrati">Non sei ancora registrato?</a>
+			</div>
+	</div>	    
+</div>
