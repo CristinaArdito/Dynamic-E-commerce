@@ -48,6 +48,15 @@ app.use(bodyParser.urlencoded({extended: true, limit: '3mb'}));
 var userRoutes = require('./routes/api/user/user-index');
 app.use('/api/user', userRoutes);  
 
+// ========================
+// SITE ROUTES
+// ========================
+
+app.post('/login', function(req, res){
+	res.write("Nome: "+req.username+" e Password: "+req.password);
+	res.end();
+});
+
 app.listen(port, function() {
 	console.log('Our app is running on http://localhost:' + port);
 });

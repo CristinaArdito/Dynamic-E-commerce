@@ -59,7 +59,7 @@ userRoutes.post('/signup', function(req, res) {
 
 	var email = req.body.email;
 	var pass = req.body.password;
-	var name = req.body.name;
+	var name = req.body.username;
 	var address = req.body.address;
 
 	if(!email || !pass) {
