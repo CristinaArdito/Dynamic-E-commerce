@@ -25,6 +25,13 @@ var ERR_DB_DUPLICATE_KEY = '11000';
  *  }
  */
 
+/*
+ * Promise is relatively an easy implementation for asynchronous operation. 
+ * The promise object returned from the function represents an operation which
+ * is not completed yet, but it guarantees to the caller of the operation that
+ * the operation will be completed in future.
+*/
+
 this.addUser = function(user) {
 	/*
      * If you have to interface with asynchronous functions that are callback-based 
@@ -67,7 +74,7 @@ this.addUser = function(user) {
         deferred.resolve(user);
     })
     .catch(function(user) {
-                  if (err.code == ERR_DB_DUPLICATE_KEY)
+                  if (err.code == this.ERR_DB_DUPLICATE_KEY)
                       {deferred.reject({code:'ERR_DB_DUPLICATE_KEY', 
                                         msg:'questo utente esiste gia'}); }
                   else
@@ -75,5 +82,18 @@ this.addUser = function(user) {
                   deferred.reject(err.errmsg);   
     });
     return deferred.promise;
+}
 
+this.getUsers = function() {
+    var users = new Utente(user);
+    //The find() method returns all occurrences in the selection.
+    //The first parameter of the find() method is a query object.
+    users.find()
+        .then(function(user) {
+            console.log(user);
+            deferred.resolve(user);
+    })
+        .catch(function() {
+            deferred.reject;
+    });
 }

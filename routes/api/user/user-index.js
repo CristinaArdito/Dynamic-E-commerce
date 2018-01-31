@@ -35,7 +35,7 @@ userRoutes.post('/authenticate', function(req, res) {
                                       message: 'Bad Request. name and password required.' });  
 
 	}
-	console.log("Dati (api_index_login): "+email+" "+psw);
+	console.log("Dati (api_index_login): "+email+" "+pass);
 	//login utente
 	user_utilities.login(email,pass)
 		.then(function(token) {
@@ -50,4 +50,52 @@ userRoutes.post('/authenticate', function(req, res) {
                                           message: err.msg 
                                         });  
 		});	
+});
+
+userRoutes.post('/signup', function(req, res) {
+	//debug
+	console.log("Body: ");
+    console.log(req.body);
+
+	var email = req.body.email;
+	var pass = req.body.password;
+	var name = req.body.name;
+	var address = req.body.address;
+
+	if(!email || !pass) {
+		console.log("Body error");
+        return res.status(400).json({ success: false, 
+                                      code:user_utilities.ERR_MISSING_DATA,
+                                      message: 'Bad Request. email and password required.' });  		
+	}
+	user_utilities.addUser(name, pass, email, address)
+	.then(function(user) {
+        Console.log("In teoria è salvato");
+        res.status(201).json({ success: true , msg:"utente salvato", data:user});
+    })
+    .catch(function(err) {
+        res.status(400).json({ success: false , 
+                               code:err.code,
+                               msg:err.msg, 
+                               data:""}); 
+    });
+});
+
+userRoutes.post('/all', function(req, res){
+  user_utilities.getUsers()
+    .then(function(user){
+      console.log("\n\nUser: "+user);
+      res.status(200).json({
+        success: true,
+        msg: "Lista di tutti gli utenti",
+        data : user
+      });
+    })
+    .catch(function(err){
+      res.status(400).json({
+        success: false,
+        msg:err,
+        data:""
+      });
+    });
 });

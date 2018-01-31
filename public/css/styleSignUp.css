@@ -1,0 +1,76 @@
+.cont hr {
+  border-style: solid;
+  border-bottom: 3px #e0e0e0;
+  width: 96%;
+  margin-left: 2%;
+  margin-top: 0.5%;
+}
+
+.cont h1 {
+	margin-left: 2%;
+	margin-top: 2%;
+	text-transform: uppercase;
+}
+
+.form {
+	width: 50%;
+	margin-top: 1%;
+	margin-left: 2%;
+	border: 1px solid #ebebeb;
+}
+
+.form h3 {
+	text-transform: uppercase;
+	margin-left: 1%;
+	margin-top: 1%;
+}
+
+.form hr {
+	margin-left: 1% !important;
+}
+
+.form form {
+	margin-left: 1%;
+	margin-top: 1%;
+}
+
+.form input {
+	padding: 2px;
+}
+
+.form button {
+	width: 7%;
+	padding: 5px;
+	margin-top: 1%;
+	background-color: #000 !important;
+	color: #fff;
+	border: none;
+}
+
+.form button .entra {
+	text-transform: uppercase;
+	margin-left: 24%;
+}
+
+.form .button a{
+	margin-left: 1%;
+	color: black;
+	font-family: 'Open Sans',sans-serif !important;
+	font-size: 13px;
+}
+
+.error {
+	background-color: #f3515c !important;
+	color: #fff;
+	background: url(../img/icon/xbutton.png) no-repeat;
+	background-position: left 10px top 5px;
+	background-size: 10%;
+	margin-top: 2%;
+	margin-left: 2%;
+	width: 10%;
+	padding: 5px;
+}
+
+.error a {
+	margin-left: 20%;
+}

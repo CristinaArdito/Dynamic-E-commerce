@@ -1,3 +1,5 @@
 user-index creates end points
 user-utilities functions recalled by controllers
 db-utilities-user functions performed by mongo
+
+userService -> user-index -> user-utilities -> db-utilities-user
