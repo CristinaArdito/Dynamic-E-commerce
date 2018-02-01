@@ -39,7 +39,13 @@ angular.module('kriapp', ['myApp.services', 'myApp.controllers', 'ngRoute', 'ui.
         });
 	})        
 
-    .controller('MyCtrl', ['$state', function($state) {
+    .controller('MyCtrl', ['$state', 'userService', function($state, userService) {
+        if(userService.isLogged() == true) {
+            $state.go('loggedHome');
+        }
+        else {
+            $state.go('home');
+        }
     }])
 
     //Silenzia errori di codice del router delle view, non è influente per il funzionamento

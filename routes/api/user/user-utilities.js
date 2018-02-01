@@ -18,13 +18,13 @@ this.ERR_API_WRONG_PSW = 'ERR_API_WRONG_PSW';
 this.ERR_MISSING_DATA  = 'ERR_MISSING_DATA';
 
 this.addUser = function(name, password, email, address) {
-	return db_utilities.addUser({ name: name,
-								  password: password,
-								  email: email,
-								  address : address,
-								  admin: false
-
-	});
+   console.log("Dati (user_utilities): "+name+" "+password+" "+email+ " "+address);
+	return db_utilities.addUser({name: name,
+								 password: password,
+								 email: email,
+								 address : address,
+								 admin: false
+								});
 }
 
 this.login = function(email, pass) {
@@ -67,7 +67,7 @@ this.getUsers = function(){
   var deferred = Q.defer();
   User.find({})
     .then(function(user){
-      console.log("\n\ngetAllUser" + JSON.stringify(user));
+      //console.log("\n\ngetAllUser" + JSON.stringify(user));
       deferred.resolve(user);
     })
     .catch(function(err){

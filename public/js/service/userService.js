@@ -26,6 +26,11 @@ kriApp.service('userService', ['$q', '$http', function($q, $http) {
         return deferred.promise; 
     }  
 
+    this.isLogged = function() {
+      if(self == null) return false;
+      else return true;
+    }
+
     this.signup = function(name, psw, email, address) {
          var deferred = $q.defer(); 
          $http.post('././api/user/signup',

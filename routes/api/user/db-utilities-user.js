@@ -16,7 +16,6 @@ var ERR_DB_DUPLICATE_KEY = '11000';
 
 /*
  * Example User {
-	surname,
     name,
     email,
     password, 
@@ -49,20 +48,25 @@ this.addUser = function(user) {
      * });
      * return deferred.promise;
 	 */
-
+   console.log("Dati (db_user_utilities): "+user.name+" "+user.password+" "+user.email+ " "+user.address);
 	var deferred = Q.defer();
 	if(!user.password || user.password == "" || user.password.length < 4) {
+        console.log("a");
 		deferred.reject('La password non può essere vuota o inferiore a 4 caratteri.');
 		return deferred.promise;
 	}
 	if(!user.name || user.name == "") {
+        console.log("b");
 		deferred.reject('Il nome non può essere vuoto.');
 		return deferred.promise;		
 	}
 	if(!user.email || user.email == "") {
+        console.log("c");
 		deferred.reject('La mail non può essere vuota.');
 		return deferred.promise;		
 	}
+    if (!user.admin)
+      { user.admin = false; }
 
 	var saveuser = new User(user);
 	saveuser.save()
@@ -73,9 +77,10 @@ this.addUser = function(user) {
         /* eventuale invio email */
         deferred.resolve(user);
     })
-    .catch(function(user) {
-                  if (err.code == this.ERR_DB_DUPLICATE_KEY)
-                      {deferred.reject({code:'ERR_DB_DUPLICATE_KEY', 
+    .catch(function(err) {
+             console.log("errore");
+                  if (err.code == ERR_DB_DUPLICATE_KEY) {
+                                        deferred.reject({code:'ERR_DB_DUPLICATE_KEY', 
                                         msg:'questo utente esiste gia'}); }
                   else
                       {logger.error('[addUser] errore salvataggio utente '+err.errmsg);}

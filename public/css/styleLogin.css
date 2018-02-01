@@ -39,6 +39,7 @@
 }
 
 .form button {
+	cursor: pointer;
 	width: 7%;
 	padding: 5px;
 	margin-top: 1%;

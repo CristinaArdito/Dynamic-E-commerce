@@ -59,7 +59,7 @@ userRoutes.post('/signup', function(req, res) {
 
 	var email = req.body.email;
 	var pass = req.body.password;
-	var name = req.body.username;
+	var name = req.body.name;
 	var address = req.body.address;
 
 	if(!email || !pass) {
@@ -84,7 +84,7 @@ userRoutes.post('/signup', function(req, res) {
 userRoutes.post('/all', function(req, res){
   user_utilities.getUsers()
     .then(function(user){
-      console.log("\n\nUser: "+user);
+      //console.log("\n\nUser: "+user);
       res.status(200).json({
         success: true,
         msg: "Lista di tutti gli utenti",
