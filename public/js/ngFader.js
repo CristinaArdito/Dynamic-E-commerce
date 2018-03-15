@@ -13,7 +13,7 @@
 			src: '../public/img/slideshow1.jpg',
 			alt: 'Master Cart Record'
 		}, {
-			src: '../public/img/slideshow2.jpg',
+			src: '../public/img/slideshow6.jpg',
 			alt: 'Master Cart Record'
 		}, {
 			src: '../public/img/slideshow3.jpg',
