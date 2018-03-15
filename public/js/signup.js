@@ -33,6 +33,4 @@ kriApp.controller('signupController', ['$scope', '$state', '$location', 'userSer
       })
     }
 
-
-
 }]);

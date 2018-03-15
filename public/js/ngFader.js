@@ -15,12 +15,6 @@
 		}, {
 			src: '../public/img/slideshow2.jpg',
 			alt: 'Master Cart Record'
-		}, {
-			src: '../public/img/slideshow3.jpg',
-			alt: 'Master Cart Record'
-		}, {
-			src: '../public/img/slideshow4.jpg',
-			alt: 'Master Cart Record'
 		}];
 
 		/*****************************************************
