@@ -10,13 +10,16 @@
 
 		//List your images here. 
 		scope.images = [{
-			src: '../public/img/slideshow1.jpg',
-			alt: 'Master Cart Record'
-		}, {
-			src: '../public/img/slideshow6.jpg',
+			src: '../public/img/slideshow1.png',
 			alt: 'Master Cart Record'
 		}, {
 			src: '../public/img/slideshow3.jpg',
+			alt: 'Master Cart Record'
+		}, {
+			src: '../public/img/slideshow4.png',
+			alt: 'Master Cart Record'
+		}, {
+			src: '../public/img/slideshow2.jpg',
 			alt: 'Master Cart Record'
 		}];
 
