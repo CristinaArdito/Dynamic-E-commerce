@@ -70,7 +70,7 @@ userRoutes.post('/signup', function(req, res) {
 	}
 	user_utilities.addUser(name, pass, email, address)
 	.then(function(user) {
-        Console.log("In teoria è salvato");
+       // console.log("In teoria è salvato");
         res.status(201).json({ success: true , msg:"utente salvato", data:user});
     })
     .catch(function(err) {
