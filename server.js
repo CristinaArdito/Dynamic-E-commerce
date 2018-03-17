@@ -48,6 +48,9 @@ app.use(bodyParser.urlencoded({extended: true, limit: '3mb'}));
 var userRoutes = require('./routes/api/user/user-index');
 app.use('/api/user', userRoutes);  
 
+var productRoutes = require('./routes/api/product/product-index');
+app.use('/api/product', productRoutes); 
+
 // ========================
 // SITE ROUTES
 // ========================

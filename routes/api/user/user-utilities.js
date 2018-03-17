@@ -27,6 +27,12 @@ this.addUser = function(name, password, email, address) {
 								});
 }
 
+/*
+For work that doesn't return immediately (asynchronous) you may create deferred object. 
+Deferred holds both resolve and promise objects. Observers interested in value are 
+attached to promise object, with resolve we resolve promise with an actual value. 
+In common usage promise is returned to the world and resolve is kept internally
+*/
 this.login = function(email, pass) {
 	console.log("Dati (user_utilities login): "+email+" "+pass);
 

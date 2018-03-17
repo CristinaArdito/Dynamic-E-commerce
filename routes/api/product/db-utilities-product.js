@@ -38,7 +38,8 @@ this.addProduct = function(product) {
      * But much of the time, the solution will be to use deferreds.
      *
      * example:
-     * var deferred = Q.defer();
+     * var deferred = Q.defer(); // Creates a Deferred object which represents a 
+                                 // task which will finish in the future.
      * FS.readFile("foo.txt", "utf-8", function (error, text) {
      * if (error) {
      *   deferred.reject(new Error(error));
@@ -46,7 +47,9 @@ this.addProduct = function(product) {
      *   deferred.resolve(text);
      * }
      * });
-     * return deferred.promise;
+     * return deferred.promise; // Returns a promise that resolves or rejects as soon as
+                                // one of those promises resolves or rejects, with the value 
+                                // or reason from that promise.
 	 */
    console.log("Dati (db_product_utilities): "+product.name+" "+product.code);
 	var deferred = Q.defer();
