@@ -13,6 +13,8 @@ kriApp.service('userService', ['$q', '$http', function($q, $http) {
                     {'email':email, 'password':psw})
              .then(function(data) 
                  {
+                  //data.data.message -> returns 'Enjoy your token!'
+                  //data.data.data.token -> returns user token
                   self = data.data.data.token;      // mi salvo l'utente corrente
                   mail = email;
                   isAdmin = data.data.data.admin;
@@ -52,9 +54,11 @@ kriApp.service('userService', ['$q', '$http', function($q, $http) {
 
         $http.post("././api/user/all")
         .then(function(data){
+          //data.data returns all the object
+          //data.data.msg returns the message
+          //data.data.data return user's list
             deferred.resolve(data.data);
         })
-
         return deferred.promise;
     }  
 

@@ -16,4 +16,4 @@ Angular ci fornisce il valore restituito dall’esecuzione della funzione associ
 
 kriApp.factory("DataService", function() {
 
-}
+});

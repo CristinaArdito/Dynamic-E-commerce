@@ -66,18 +66,14 @@ this.addProduct = function(product) {
 	saveproduct.save()
     .then(function(product) {
         console.log("Prodotto salvato");
-        //Convert a JavaScript object into a string with JSON.stringify().
-        logger.debug('prodotto salvato '+JSON.stringify(user));
         /* eventuale invio email */
         deferred.resolve(product);
     })
     .catch(function(err) {
-             console.log("errore");
+            console.error('Errore salvataggio prodotto '+err.errmsg);
                   if (err.code == ERR_DB_DUPLICATE_KEY) {
                                         deferred.reject({code:'ERR_DB_DUPLICATE_KEY', 
                                         msg:'questo prodotto esiste gia'}); }
-                  else
-                      {logger.error('[addProduct] errore salvataggio prodotto '+err.errmsg);}
                   deferred.reject(err.errmsg);   
     });
     return deferred.promise;

@@ -1,6 +1,6 @@
 var kriApp = angular.module('kriapp');
 // create the controller and inject Angular's $scope
-kriApp.controller('loginController', ['$scope', '$state', '$compile', 'userService',  
+kriApp.controller('loginController', ['$scope', '$state', '$compile', 'userService', 
   function($scope, $state, $compile, userService)
    {
     $scope.email;

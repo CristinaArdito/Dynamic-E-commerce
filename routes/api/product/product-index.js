@@ -44,7 +44,6 @@ productRoutes.post('/add', function(req,res){
   product_utilities.addProduct(name, desc, price, categories, code, url, weight, quantity)
         .then(function(product)
           {
-           Console.log("In teoria è salvato");
            res.status(201).json({ success: true , msg:"prodotto salvato", data:product});
           })
         .catch(function(err)
@@ -60,9 +59,6 @@ productRoutes.post('/all', function(req, res){
   product_utilities.getProducts()
     .then(function(products)
       {
-
-        //console.log("\n\nProdotti: "+products);
-
         res.status(200).json({ success: true , 
                                msg: "lista di tutti i prodotti", 
                                data: products});
