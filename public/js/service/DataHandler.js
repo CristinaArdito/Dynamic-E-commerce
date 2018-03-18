@@ -14,6 +14,24 @@ Quando utilizziamo un servizio definito tramite il metodo factory(),
 Angular ci fornisce il valore restituito dall’esecuzione della funzione associata.
 */
 
-kriApp.factory("DataService", function() {
+kriApp.factory("dataHandler", function() {
 
-});
+    var savedData = null;
+    var indice = -1;
+    
+    function set(data) {
+      savedData = data;
+    }
+
+    function get_nonreset() {
+      var ret = savedData;
+      return ret;
+    }
+
+    return {
+     set: set,
+     get_nonreset: get_nonreset,
+    }
+   
+   })
+   .run(function(dataHandler) {});

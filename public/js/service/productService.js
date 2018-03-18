@@ -36,4 +36,25 @@ this.getProducts = function() {
     return deferred.promise;
 }
 
+this.uploadImg = function(data, url) {
+	var deferred = $q.defer();
+      if(url == null){
+        $http.post("././api/product/upload", {
+          'data' : data, 'url' : null
+        })
+        .then(function(urlName){
+          deferred.resolve(urlName);
+        })
+      }else{
+        $http.post("././api/product/upload", {
+          'data' : data, 'url' : url
+        })
+        .then(function(urlName){
+          deferred.resolve(urlName);
+        })
+      }
+      return deferred.promise;
+}
+
+
 }]).run(function(productService) {});

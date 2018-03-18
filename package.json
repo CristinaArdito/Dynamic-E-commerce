@@ -22,7 +22,8 @@
     "q": "^1.5.0",
     "jsonwebtoken": "7.4.2",
     "ui-router": "^1.0.0-alpha.3",
-    "angular-ui-router": "^1.0.3"
+    "angular-ui-router": "^1.0.3",
+    "formidable": "1.1.1"
   },
   "bugs": {
     "url": "https://github.com/CristinaArdito/progetto-kri/issues"

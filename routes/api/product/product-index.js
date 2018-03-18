@@ -5,6 +5,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var product_utilities = require('./product-utilities');
 var fs = require('fs');
+var formidable = require('formidable');
 var productRoutes = express.Router();
 module.exports = productRoutes;
 
@@ -69,4 +70,62 @@ productRoutes.post('/all', function(req, res){
         msg:err, 
         data:""}); 
       });
+});
+
+productRoutes.post('/upload', function(req, res) {
+  var names = [];
+  var url = res.body.url;
+  console.log("URL: "+url);
+
+  if(url == null) {
+    fs.readdirSync("././public/img/upload").forEach(file => {
+    names[i] = file;
+    });
+
+    if(names[0] == undefined) {
+        res.status(200).json({ success: true,
+                               msg: "Upload file",
+                               urlName: "././public/img/upload/0.jpg"});
+        var form = new formidable.IncomingForm();
+        form.multiples = false;
+        var oldpath = url;
+        var newpath = '././public/img/upload/0.jpg';
+        fs.rename(oldpath, newpath, function (err) {
+        if (err) throw err;
+          res.write('File uploaded!');
+          res.end();
+        });
+     }
+     else {
+        var numero = fs.readFileSync("././public/img/upload/index.txt");
+        nome = "././public/img/upload/"+(parseInt(numero)+1)+".jpg";
+
+        res.status(200).json({ success: true , 
+                                 msg: "Upload file",
+                                 urlName: nome});
+        var form = new formidable.IncomingForm();
+        form.multiples = false;
+        var oldpath = url;
+        var newpath = nome;
+        fs.rename(oldpath, newpath, function (err) {
+        if (err) throw err;
+          res.write('File uploaded!');
+          res.end();
+        });
+        var n = (parseInt(numero)+1);
+        fs.writeFileSync("././public/img/upload/index.txt", ""+n);
+     }
+  }
+  else {
+        res.status(200).json({ success: true , 
+                               msg: "Upload file",
+                               urlName: url});
+        var form = new formidable.IncomingForm();
+        form.multiples = false;
+        fs.rename(url, url, function (err) {
+        if (err) throw err;
+          res.write('File uploaded!');
+          res.end();
+        });
+  }
 });
