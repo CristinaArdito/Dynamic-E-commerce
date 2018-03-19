@@ -62,6 +62,11 @@ kriApp.service('userService', ['$q', '$http', function($q, $http) {
         return deferred.promise;
     }  
 
+    this.isAdmin = function() {
+      if(isAdmin == true) return true;
+      else return false;
+    }
+
 
 
 }]).run(function(userService) {});

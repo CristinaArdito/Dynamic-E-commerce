@@ -12,7 +12,12 @@ function($scope, userService, $location, $state) {
 
     if(isLogged == false) {
     	if(userService.isLogged() == true) {
-    		$state.go('loggedHome');
+    		if(userService.isAdmin() == true) {
+                $state.go('loggedHomeAdmin');
+            }
+            else {
+                $state.go('loggedHome');
+            }
     	}
     	else {
     		$state.go('home');

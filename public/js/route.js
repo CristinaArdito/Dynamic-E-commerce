@@ -36,9 +36,19 @@ angular.module('kriapp', ['myApp.services', 'myApp.controllers', 'ngRoute', 'ui.
             templateUrl: 'views/indexLogout.ejs',
             controller: 'mainController'
         })
+        .state('dashboard', {
+           url: '/dashboard',
+           templateUrl: 'views/back-end/warehouse.ejs',
+           controller: 'productController'
+        })
         .state('loggedHome', {
             url: '/',
             templateUrl: 'views/indexLogin.ejs',
+            controller: 'mainController'
+        })
+        .state('loggedHomeAdmin', {
+            url: '/',
+            templateUrl: 'views/indexLoginAdmin.ejs',
             controller: 'mainController'
         });
 	})        
