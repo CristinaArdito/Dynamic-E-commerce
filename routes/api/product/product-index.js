@@ -5,7 +5,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var product_utilities = require('./product-utilities');
 var fs = require('fs');
-var formidable = require('formidable');
 var productRoutes = express.Router();
 module.exports = productRoutes;
 
@@ -22,7 +21,7 @@ productRoutes.post('/add', function(req,res){
   //console.log(req.body);
   
   var name = req.body.data[0];
-  var code = parseInt(fs.readFileSync("././public/img/product_2 (TEST)/index.txt"));
+  var code = parseInt(fs.readFileSync("././public/img/upload/index.txt"));
   var categories = req.body.data[1].split(",");
   var weight = req.body.data[2];
   var price = req.body.data[3];
@@ -30,7 +29,7 @@ productRoutes.post('/add', function(req,res){
   var url = req.body.data[5];
   var desc  = req.body.data[6];
 
-  //console.log(name);
+  //console.log("url:"+url);
 
   // controllo parametri
   if (!name || !desc || !categories)
@@ -77,7 +76,7 @@ productRoutes.post('/upload', function(req, res) {
     var i=0;
     var url = req.body.url;
 
-  //  console.log("URL: "+url);
+    //console.log("URL product-index: "+url);
 
     if(url == null){
       fs.readdirSync("././public/img/upload").forEach(file => {

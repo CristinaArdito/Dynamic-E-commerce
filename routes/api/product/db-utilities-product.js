@@ -51,13 +51,13 @@ this.addProduct = function(product) {
                                 // one of those promises resolves or rejects, with the value 
                                 // or reason from that promise.
 	 */
-   console.log("Dati (db_product_utilities): "+product.name+" "+product.code);
+   console.log("Dati (db_product_utilities): "+product.name+" "+product.code+" "+product.url);
 	var deferred = Q.defer();
 	if(!product.name || product.name == "") {
 		deferred.reject('Inserire il nome del prodotto.');
 		return deferred.promise;
 	}
-	if(!product.code || product == "") {
+	if(!product.code || product.code == "") {
 		deferred.reject('Inserire il codice del prodotto.');
 		return deferred.promise;		
 	}

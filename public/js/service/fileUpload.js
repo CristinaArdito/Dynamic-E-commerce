@@ -13,8 +13,7 @@ kriApp.service('fileUpload', ['$q','dataHandler', 'productService', function ($q
             };
         };
 
-    this.fileReader = function (file) {
-    	
+    this.fileReader = function (file) {    	
             var reader = new FileReader();
             var result = null;
 

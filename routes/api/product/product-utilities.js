@@ -18,7 +18,7 @@ this.ERR_API_WRONG_PSW = 'ERR_API_WRONG_PSW';
 this.ERR_MISSING_DATA  = 'ERR_MISSING_DATA';
 
 this.addProduct = function(name, desc, price, categories, code, url, weight, quantity) {
-   console.log("Dati (product_utilities): "+name+" "+code);
+   console.log("Dati (product_utilities): "+name+" "+code+ " "+url);
 	return db_utilities.addProduct({name: name,
 	                               desc:desc,
 	                               price:price,
