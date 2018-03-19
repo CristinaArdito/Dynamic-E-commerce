@@ -38,6 +38,7 @@ this.getProducts = function() {
 
 this.uploadImg = function(data, url) {
 	var deferred = $q.defer();
+  //console.log("data "+data);
       if(url == null){
         $http.post("././api/product/upload", {
           'data' : data, 'url' : null
@@ -50,6 +51,7 @@ this.uploadImg = function(data, url) {
           'data' : data, 'url' : url
         })
         .then(function(urlName){
+          console.log("SONO QUI");
           deferred.resolve(urlName);
         })
       }

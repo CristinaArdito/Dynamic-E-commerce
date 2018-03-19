@@ -1,7 +1,7 @@
 var kriApp = angular.module('kriapp');
 // create the controller and inject Angular's $scope
-kriApp.controller('loginController', ['$scope', '$state', '$compile', 'userService', 'fileUpload', 'productService', 'dataHandler',
-  function($scope, $state, $compile, userService, fileUpload, productService, dataHandler)
+kriApp.controller('loginController', ['$scope', '$state', '$compile', 'userService',
+  function($scope, $state, $compile, userService)
    {
     $scope.email;
     $scope.password;
@@ -21,17 +21,6 @@ kriApp.controller('loginController', ['$scope', '$state', '$compile', 'userServi
                  var error = '<div class="error"><a>Credenziali Errate</a></div>'
                  angular.element(document.getElementById('error')).append($compile(error)($scope));
                 });
-      }
+      } 
 
-    $scope.loadFile = function(){
-        var file = angular.element(document.getElementById("img"))[0].files[0];
-        if(file.size>2097152) alert("File troppo grande, dimensione massima 2MB");
-        else fileUpload.fileReader(file);
-
-        productService.uploadImg(dataHandler.get_nonreset(), "././public/img/upload/")
-        .then(function(data) {
-          console.log(data.data.urlName);
-        })
-        .catch(function(err) { console.log(err);})
-    }  
-   }]);
+}]);

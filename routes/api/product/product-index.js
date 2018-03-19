@@ -73,59 +73,53 @@ productRoutes.post('/all', function(req, res){
 });
 
 productRoutes.post('/upload', function(req, res) {
-  var names = [];
-  var url = res.body.url;
-  console.log("URL: "+url);
+    var names = [];
+    var i=0;
+    var url = req.body.url;
 
-  if(url == null) {
-    fs.readdirSync("././public/img/upload").forEach(file => {
-    names[i] = file;
-    });
+  //  console.log("URL: "+url);
 
-    if(names[0] == undefined) {
-        res.status(200).json({ success: true,
-                               msg: "Upload file",
-                               urlName: "././public/img/upload/0.jpg"});
-        var form = new formidable.IncomingForm();
-        form.multiples = false;
-        var oldpath = url;
-        var newpath = '././public/img/upload/0.jpg';
-        fs.rename(oldpath, newpath, function (err) {
-        if (err) throw err;
-          res.write('File uploaded!');
-          res.end();
+    if(url == null){
+      fs.readdirSync("././public/img/upload").forEach(file => {
+        names[i] = file;
+        i++;
+      });
+
+      var imgData = req.body.data.replace(/^data:image\/\w+;base64,/, "");
+
+      if(names[0] == undefined){
+        res.status(200).json({ success: true ,
+          msg: "url file", 
+          urlName: "././public/img/upload/0.jpg"});
+        fs.writeFile("././public/img/upload/0.jpg", new Buffer(imgData,"base64"), function(err) {
+            if (err) throw err;
+            console.log('Saved!');
         });
-     }
-     else {
+      }else{
+
         var numero = fs.readFileSync("././public/img/upload/index.txt");
         nome = "././public/img/upload/"+(parseInt(numero)+1)+".jpg";
 
         res.status(200).json({ success: true , 
-                                 msg: "Upload file",
-                                 urlName: nome});
-        var form = new formidable.IncomingForm();
-        form.multiples = false;
-        var oldpath = url;
-        var newpath = nome;
-        fs.rename(oldpath, newpath, function (err) {
-        if (err) throw err;
-          res.write('File uploaded!');
-          res.end();
+          msg: "url file",
+          urlName: nome});
+        
+        fs.writeFile(nome, new Buffer(imgData,"base64"), function(err) {
+            if (err) throw err;
+            console.log('Saved!');
         });
-        var n = (parseInt(numero)+1);
-        fs.writeFileSync("././public/img/upload/index.txt", ""+n);
-     }
-  }
-  else {
-        res.status(200).json({ success: true , 
-                               msg: "Upload file",
-                               urlName: url});
-        var form = new formidable.IncomingForm();
-        form.multiples = false;
-        fs.rename(url, url, function (err) {
-        if (err) throw err;
-          res.write('File uploaded!');
-          res.end();
+          var n = (parseInt(numero)+1);
+          fs.writeFile("././public/img/upload/index.txt", ""+n);
+      }
+    }else{
+      var imgData = req.body.data.replace(/^data:image\/\w+;base64,/, "");
+      fs.writeFile(url, new Buffer(imgData,"base64"), function(err) {
+            if (err) throw err;
+            console.log('Saved!');
         });
-  }
+
+      res.status(200).json({ success: true , 
+        msg: "url file",
+        urlName: url});
+    }
 });
