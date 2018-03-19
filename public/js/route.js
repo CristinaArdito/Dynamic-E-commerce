@@ -13,6 +13,10 @@ angular.module('kriapp', ['myApp.services', 'myApp.controllers', 'ngRoute', 'ui.
                 templateUrl : 'views/front-end/home.ejs',
                 controller: 'mainController'
             })     
+            .when('/dashboard', {
+               templateUrl: 'views/back-end/warehouseHome.ejs',
+               controller: 'productController'
+            })
             .when('/login', {
                 templateUrl : 'views/front-end/login.ejs',
                 controller: 'loginController'
@@ -38,8 +42,8 @@ angular.module('kriapp', ['myApp.services', 'myApp.controllers', 'ngRoute', 'ui.
         })
         .state('dashboard', {
            url: '/dashboard',
-           templateUrl: 'views/back-end/warehouse.ejs',
-           controller: 'productController'
+           templateUrl: 'views/back-end/werehouse.ejs',
+           controller: 'dashController'
         })
         .state('loggedHome', {
             url: '/',

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="././public/css/style.css"/>
+<div class="pageHeader"  ng-init="resetData()" ng-controller="dashController">
+<a ui-sref="dashboard"></a>
+</div>
+<header>           
+            <div class="header">
+                <div class="logo">
+                </div>
+            <div class="searchbox">
+             <form>
+             <input type="search" class="form-control" id="mainSearchBox" placeholder="Search"/>
+                 <button type="submit" id="submitButtonMain" class="idbutton"></button>
+            </form>
+            </div>
+            <div class="menu" ng-controller="mainController">
+            <div class="nav-center">
+                <ul>
+                    <li class="home"><a href="#!/"><div class="homeicon"></div></a></li>
+                    <li class="menu2"><a class="down" href="#!/">Aggiungi prodotto</a>
+                    </li>    
+                    <li class="menu2"><a class="down" href="#!/">Hardware</a>
+                                <ul class="dropdown_5columns"><!-- Begin 5 columns container -->      
+        
+        
+        </ul><!-- End 5 columns container --></li>
+                    <li><a class="down3" href="#!/"></a></li>
+                    <li><a class="down2" href="#!/"></a></li>
+                    <li><a class="down2" href="#!/"></a></li>
+                    <li><a class="down" href="#!/"></a></li>
+                </ul>
+            </div>
+            </div>
+            </div>
+            
+        </header>
+</html>
