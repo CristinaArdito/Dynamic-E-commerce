@@ -21,6 +21,6 @@ kriApp.controller('loginController', ['$scope', '$state', '$compile', 'userServi
                  var error = '<div class="error"><a>Credenziali Errate</a></div>'
                  angular.element(document.getElementById('error')).append($compile(error)($scope));
                 });
-      } 
+      }
 
 }]);

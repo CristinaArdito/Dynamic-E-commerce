@@ -21,6 +21,10 @@ angular.module('kriapp', ['myApp.services', 'myApp.controllers', 'ngRoute', 'ui.
                 templateUrl : 'views/front-end/signup.ejs',
                 controller: 'signupController'
             })  
+            .when('/product', {
+                templateUrl : 'views/front-end/product.ejs',
+                controller: 'productController'
+            }) 
 
 
 
