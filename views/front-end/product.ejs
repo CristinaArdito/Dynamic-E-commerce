@@ -34,7 +34,8 @@
 </style>
 
                     <span>Immagine prodotto (Dimensione massima 2MB): </span><input type="file" name="pic" accept=".png, .jpg"  id="img"></input>
-        <input type="submit" ng-click="loadFile()" value="Carica file"></input><br>
+        <input type="submit" ng-click="loadFile()" value="Verifica"></input>
+        <input type="submit" ng-click="addPhoto()" value="Carica"></input><br>
         Progress: <div id="percentVisible">0%</div>
             <div ng-show="progressVisible">
             <div class="percent">{{progress}}</div>

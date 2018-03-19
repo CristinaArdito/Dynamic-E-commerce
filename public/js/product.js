@@ -9,17 +9,29 @@ kriApp.controller('productController', ['$scope', '$compile', 'fileUpload', 'pro
         if(file != null) {
           if(file.size>2097152) alert("File troppo grande, dimensione massima 2MB");
           else fileUpload.fileReader(file);
-          var xhr = new XMLHttpRequest();
-          xhr.upload.addEventListener("progress", uploadProgress, false);
-          xhr.open("POST", "/fileupload");
-          angular.element(document.getElementById("percentVisible")).empty();
-          $scope.progressVisible = true;
         }
         else {
           var error = '<div class="error"><a>Selezionare un file</a></div>'
           angular.element(document.getElementById('error')).append($compile(error)($scope));
         }
-    }  
+    } 
+
+    $scope.addPhoto = function() {
+
+          productService.uploadImg(dataHandler.get_nonreset(), null)
+        .then(function(data) {
+          
+          console.log(data.data.urlName);
+                    var xhr = new XMLHttpRequest();
+          xhr.upload.addEventListener("progress", uploadProgress, false);
+          xhr.open("POST", "/fileupload");
+          angular.element(document.getElementById("percentVisible")).empty();
+          $scope.progressVisible = true;
+        })
+        .catch(function(err) {
+         console.log(err);
+        });
+    } 
 
     function uploadProgress(evt) {
         scope.$apply(function(){

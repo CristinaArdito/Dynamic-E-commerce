@@ -23,6 +23,12 @@ kriApp.factory("dataHandler", function() {
       savedData = data;
     }
 
+    function get() {
+     var ret = savedData;
+     savedData = null;
+     return ret;
+    }
+
     function get_nonreset() {
       var ret = savedData;
       return ret;
@@ -30,6 +36,7 @@ kriApp.factory("dataHandler", function() {
 
     return {
      set: set,
+     get: get,
      get_nonreset: get_nonreset,
     }
    

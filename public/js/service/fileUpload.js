@@ -14,7 +14,7 @@ kriApp.service('fileUpload', ['$q','dataHandler', 'productService', function ($q
         };
 
     this.fileReader = function (file) {
-
+    	
             var reader = new FileReader();
             var result = null;
 
@@ -22,14 +22,8 @@ kriApp.service('fileUpload', ['$q','dataHandler', 'productService', function ($q
 
             reader.onload = function(event) {
                 dataHandler.set(event.target.result);
-
-        productService.uploadImg(dataHandler.get_nonreset(), null)
-        .then(function(data) {
-          console.log(data.data.urlName);
-        })
-        .catch(function(err) { console.log(err);})
-                alert("Caricamento completato");
             };
     }
+
   }])
   .run(function(fileUpload) {});
