@@ -110,8 +110,8 @@
 
 .menu .homeicon {
 	background: url("../img/icon/home.png") no-repeat;
-    top: 120%;
-	left: 80%;
+    top: 140%;
+	left: 5%;
     position: absolute;
     position: block;
     width: 100%;
@@ -126,7 +126,7 @@
 .menu ul ul {
     position: absolute;
     top: 80%;
-    left: 15%;
+    left: -105%;
     visibility: hidden;
 }
 
