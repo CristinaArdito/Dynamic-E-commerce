@@ -21,6 +21,13 @@ function($scope, userService, $location, $state, $http, $cookieStore, $rootScope
         }
     }
 
+ /*productService.getProductsByCat("Monitor")
+ .then(function(data) {
+               for(i=0;i<data.length;i++){
+                console.log(data[i].name);
+            }
+});*/
+    
   /*  if(isLogged == false) {
     	if(userService.isLogged() == true) {
     		if(userService.isAdmin() == true) {

@@ -71,6 +71,24 @@ productRoutes.post('/all', function(req, res){
       });
 });
 
+productRoutes.post('/prodcategory', function(req, res){
+  var category = req.body.data;
+  product_utilities.getProductsByCat(category)
+    .then(function(products)
+      {
+        res.status(200).json({ success: true , 
+                               msg: "lista di tutti i prodotti", 
+                               data: products});
+      })
+      .catch(function(err)
+      {
+        res.status(400).json({ success: false , 
+        msg:err, 
+        data:""}); 
+      });
+});
+
+
 productRoutes.post('/upload', function(req, res) {
     var names = [];
     var i=0;

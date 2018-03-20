@@ -36,6 +36,18 @@ this.getProducts = function() {
     return deferred.promise;
 }
 
+this.getProductsByCat = function(category) {
+    var deferred = $q.defer();
+    $http.post("././api/product/prodcategory", {'data' : category})
+    .then(function(data){
+          //data.data returns all the object
+          //data.data.msg returns the message
+          //data.data.data returns the list of products
+    deferred.resolve(data.data.data);
+    })
+    return deferred.promise;
+}
+
 this.uploadImg = function(data, url) {
 	var deferred = $q.defer();
   //console.log("data "+data);

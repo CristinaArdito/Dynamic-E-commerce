@@ -43,3 +43,17 @@ this.getProducts = function(){
     });
   return deferred.promise;
 }
+
+this.getProductsByCat = function(category){
+  var deferred = Q.defer();
+  Product.find({"categories" : category})
+    .then(function(product){
+      //console.log("\n\ngetAllUser" + JSON.stringify(user));
+      deferred.resolve(product);
+    })
+    .catch(function(err){
+      logger.error('[getProducts]' +err);
+      deferred.reject({code:"",msg:err});
+    });
+  return deferred.promise;
+}
