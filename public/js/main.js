@@ -11,7 +11,7 @@ function($scope, userService, $location, $state, $http, $cookieStore, $rootScope
     }
 
     $rootScope.globals = $cookieStore.get('globals') || {};
-    console.log($rootScope.globals.currentUser);
+    //console.log($rootScope.globals.currentUser);
     if($rootScope.globals.currentUser != null) {
         if($rootScope.globals.currentUser.isAdmin == true) {
              $state.go('loggedHomeAdmin');

@@ -1,0 +1,64 @@
+<style>
+.progress-bar {
+    width: 300px; height: 14px;
+    border-radius: 10px;
+    border: 1px solid #CCC;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#09ef2c), to(#019131));
+    border-image: initial;
+    margin-top: -1%;
+	margin-left: 40%;
+}
+#percentVisible {
+	margin-top: -1%;
+	margin-left: 40%;
+}
+.done {
+		margin-top: -1%;
+	margin-left: 40%;
+}
+.error {
+    background-color: #f3515c !important;
+    color: #fff;
+    background: url(././public/img/icon/xbutton.png) no-repeat;
+    background-position: left 10px top 5px;
+    background-size: 10%;
+    margin-top: 2%;
+    margin-left: 2%;
+    width: 10%;
+    padding: 5px;
+}
+
+.error a {
+    margin-left: 20%;
+}
+</style>
+<br><br>
+        <span>Nome prodotto: </span><input type="text" id="name"></input><br>
+        <span>Categoria prodotto: </span>
+        <select id="selectionForm">
+                <option value="Hardware">Hardware</option>
+                <option value="Software">Software</option>
+                <option value="Pc-Workstation">Pc-Workstation</option>
+                <option value="Pc-preconfigurati">Pc-preconfigurati</option>
+                <option value="Notebook">Notebook</option>
+                <option value="Monitor">Monitor</option>
+                 <option value="Monitor">Tv</option>
+                <option value="Gaming">Gaming</option>
+                <option value="Periferiche">Periferiche</option>
+        </select><br>
+        <span>Peso prodotto: </span><input type="text" id="peso"></input><br>
+        <span>Prezzo prodotto: </span><input type="text" id="price"></input><br>
+        <span>Quantità prodotto: </span><input type="number" min="0" value='0' id="q"></input><br>
+        <span>Immagine prodotto (Dimensione massima 2MB): </span><input type="file" name="pic" accept=".png, .jpg"  id="img"></input>
+        <input type="submit" ng-click="loadFile()" value="Carica img"></input>
+        Progress: <div id="percentVisible">0%</div>
+            <div ng-show="progressVisible">
+            <div class="percent">{{progress}}</div>
+            <div class="progress-bar">
+                <div class="uploaded" ng-style="{'width': progress+'%'}"></div>
+                <div class="done">100%</div>
+            </div>
+        </div> 
+        <div id = "error"></div>
+                <span class="desc">Descrizione prodotto: </span><textarea id="desc" rows="4" cols="50"></textarea><br>
+        <input type="submit" ng-click="addProduct()" value="Carica prodotto"></input><br>

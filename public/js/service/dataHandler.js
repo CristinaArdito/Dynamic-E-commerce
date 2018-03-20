@@ -34,10 +34,15 @@ kriApp.factory("dataHandler", function() {
       return ret;
     }
 
+    function reset() {
+      var savedData = null;
+      var indice = -1;
+    }
     return {
      set: set,
      get: get,
      get_nonreset: get_nonreset,
+     reset : reset,
     }
    
    })

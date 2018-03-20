@@ -15,7 +15,7 @@ angular.module('kriapp', ['myApp.services', 'myApp.controllers', 'ngRoute', 'ui.
             })     
             .when('/dashboard', {
                templateUrl: 'views/back-end/warehouseHome.ejs',
-               controller: 'productController'
+               controller: 'werehouseController'
             })
             .when('/login', {
                 templateUrl : 'views/front-end/login.ejs',
@@ -25,9 +25,9 @@ angular.module('kriapp', ['myApp.services', 'myApp.controllers', 'ngRoute', 'ui.
                 templateUrl : 'views/front-end/signup.ejs',
                 controller: 'signupController'
             })  
-            .when('/product', {
-                templateUrl : 'views/front-end/product.ejs',
-                controller: 'productController'
+            .when('/addproduct', {
+                templateUrl : 'views/back-end/addProduct.ejs',
+                controller: 'addProductController'
             }) 
 
 

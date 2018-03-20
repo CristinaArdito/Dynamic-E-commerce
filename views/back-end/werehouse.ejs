@@ -1,6 +1,6 @@
-<!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="././public/css/styleWerehouse.css"/>
+<div class="page">
 <div class="pageHeader"  ng-init="resetData()" ng-controller="dashController">
 <a ui-sref="dashboard"></a>
 </div>
@@ -14,11 +14,11 @@
                  <button type="submit" id="submitButtonMain" class="idbutton"></button>
             </form>
             </div>
-            <div class="menu" ng-controller="mainController">
-            <div class="nav-center">
+            <div class="menu">
+            <div class="nav-ceter">
                 <ul>
                     <li class="home"><a href="#!/"><div class="homeicon"></div></a></li>
-                    <li class="menu2"><a  href="#!/">Aggiungi prodotto</a></li>    
+                    <li class="menu2"><a  href="#!/addproduct">Aggiungi prodotto</a></li>    
                    <!-- <li class="menu2"><a  href="#!/"></a>
                     <ul class="dropdown_5columns">  
         
@@ -34,4 +34,5 @@
             </div>
             
         </header>
+</div>        
 </html>

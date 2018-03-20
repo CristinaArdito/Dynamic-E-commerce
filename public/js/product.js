@@ -1,6 +1,6 @@
 var kriApp = angular.module('kriapp');
 // create the controller and inject Angular's $scope
-kriApp.controller('productController', ['$scope', '$compile', 'fileUpload', 'productService', 'dataHandler',
+kriApp.controller('addProductController', ['$scope', '$compile', 'fileUpload', 'productService', 'dataHandler',
   function($scope, $compile, fileUpload, productService, dataHandler)
    {
 
