@@ -1,0 +1,485 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.header {
+  width: 100%;
+  height: 95px;
+  position: relative;
+  display: block;
+  background-position: top;
+  background-color: #000;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.header .searchbox {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 20%;
+}
+
+.header .searchbox form input[type="search"] {
+    vertical-align: top;
+    margin-top: 15px;
+    display: inline-block;
+    padding: 7px;
+    -webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;
+    -moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;
+    -ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;
+    -o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;
+    box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    border: 1px solid #c8c8c8;
+    color: #777;
+    font: 13px Helvetica, Arial, sans-serif;
+    width: 80%;
+}
+
+.header .searchbox form input:focus {
+    -webkit-box-shadow: 0 0 2px #ed1c24 inset;
+    -moz-box-shadow: 0 0 2px #ed1c24 inset;
+    -ms-box-shadow: 0 0 2px #ed1c24 inset;
+    -o-box-shadow: 0 0 2px #ed1c24 inset;
+    box-shadow: 0 0 2px #ed1c24 inset;
+    background-color: #fff;
+    border: 1px solid #ed1c24;
+    outline: none;
+}
+
+.header .searchbox button {
+    margin-top: 15px;
+    margin-left: -5px;
+    display: inline-block;
+    background-color: rgb(254,231,154) !important; 
+    background-color: -moz-linear-gradient(top,  rgba(254,231,154,1) 0%, rgba(254,193,81,1) 100%) !important;
+    background-color: -webkit-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%) !important;
+    background-color: -o-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%) !important;
+    background-color: -ms-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%) !important;
+    background-color: linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%) !important;
+    background: url("../img/icon/searchbox.ico") 15px no-repeat;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec151', endColorstr='#fee79a',GradientType=0 );
+    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;
+    -moz-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;
+    -ms-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;
+    -o-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;
+    border: 1px solid #D69E31;
+    color: #85592e;
+    cursor: pointer;
+    height: 33px;
+    width: 50px;
+}
+
+.searchbox button[type="submit"]:hover {
+    background-color: rgb(254,193,81) !important;
+    background-color: -moz-linear-gradient(top,  rgba(254,193,81,1) 0%, rgba(254,231,154,1) 100%) !important;
+    background-color: -webkit-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%) !important;
+    background-color: -o-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%) !important;
+    background-color: -ms-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%) !important;
+    background-color: linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec151', endColorstr='#fee79a',GradientType=0 );
+    background: url("../img/icon/searchbox.ico") 15px no-repeat;
+}
+
+.header .menu {
+    width: 60%;
+    height: 50%;
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 20%;
+}
+
+.header .logo {
+    height: 100%;
+    width: 20%;
+    background: url("../img/think.jpg") 20px no-repeat;
+    background-size: 80%;
+}
+
+.menu .homeicon {
+	background: url("../img/icon/home.png") no-repeat;
+    top: 50%;
+	left: 80%;
+    position: absolute;
+    position: block;
+    width: 100%;
+    height: 100%; 
+}
+
+.menu .home {
+	margin-top: 1.5%;
+	width: 50px;
+}
+
+.menu ul ul {
+    position: absolute;
+    top: 80%;
+    left: 15%;
+    visibility: hidden;
+}
+
+.menu .nav-center li{
+    left: -3%;
+}
+
+.menu .down {
+   background: url("../img/icon/arrows.png")  no-repeat;
+   background-position: left 112px top 27px;
+   cursor: pointer;
+}
+
+.menu .down2 {
+   background: url("../img/icon/arrows.png")  no-repeat;
+   background-position: left 132px top 27px;
+   cursor: pointer;
+}
+
+.menu .down3 {
+   background: url("../img/icon/arrows.png")  no-repeat;
+   background-position: left 118px top 27px;
+   cursor: pointer;
+}
+
+.menu li {
+    z-index: 999;
+    position: relative;
+    float: left;
+    width: 13%;
+    text-align: center;
+    list-style: none;  
+}
+
+.menu2 li {
+    z-index: 999;
+    position: relative;
+    width: 80%;
+    text-align: center;
+    list-style: none;  
+}
+
+.menu li a {
+    color: #FFF;
+    padding: 13%;
+    text-decoration: none;
+    display: block;
+}
+
+.menu li a:hover {
+    text-shadow: 0px 0px 1px #FFF;
+}
+
+.menu li ul a:hover {
+    text-shadow: 0px 0px 0px #FFF;
+}
+
+.menu ul li:hover ul {
+    visibility: visible;
+}
+/*.menu ul ul li a {
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+}
+
+.menu ul ul li:last-child a {
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+.menu ul ul li a:hover {
+    background-color: #232f3e;
+}*/
+
+.header .nav-right .usericon {
+	background: url("../img/icon/people.png") no-repeat;
+    top: 20%;
+    left: 94%;
+    position: absolute;
+    position: block;
+    width: 10%;
+    height: 100%; 
+}
+
+.header .nav-right .userText {
+	color: rgb(254,231,154) !important; ;
+	text-decoration: none;
+    top: 35%;
+    left: 105%;
+    position: absolute;
+    position: block;
+}
+
+.header .nav-right ul ul{
+    margin-top: 30%;
+    margin-left: 105%;
+}
+.header .nav-right ul ul li{
+    margin-top: 30%; 
+}
+
+.header .nav-right ul ul li a {
+    background-color: #000;
+    width: 100%;
+    height: 100%; 
+}
+
+.header .nav-right ul ul li:last-child a {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+
+.header .nav-right .userText:hover {
+    text-shadow: 0px 0px 0px #F8E739;
+}
+
+.header .shopCar .shopicon {
+    background: url("../img/icon/shopping-cart.png") no-repeat;
+    top: 60%;
+    left: 89%;
+    position: absolute;
+    position: block;
+    width: 10%;
+    height: 100%; 
+}
+
+.header .shopCar .shopText{ 
+    color: White;  
+    text-decoration: none;
+    position: absolute;
+    position: block;
+    top: 67%;
+    left: 91%;
+}
+
+.shopCar .shopText:hover {
+    text-shadow: 0px 0px 0px #FFF;
+}
+
+
+.dropdown_5columns {
+	color: #fff;
+	visibility: hidden;
+
+	float:left;
+	position:absolute;
+	left:-999em; /* Hides the drop down */
+	text-align:left;
+	padding:10px 5px 10px 5px;
+	border:1px solid #777777;
+	border-top:none;
+	
+	/* Gradient background */
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,45484d+100 */
+background: #000000; /* Old browsers */
+background: -moz-linear-gradient(top, #000000 0%, #45484d 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #000000 0%,#45484d 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #000000 0%,#45484d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#45484d',GradientType=0 ); /* IE6-9 */
+
+	/* Rounded Corners */
+	-moz-border-radius: 0px 5px 5px 5px;
+	-webkit-border-radius: 0px 5px 5px 5px;
+	border-radius: 0px 5px 5px 5px;
+}
+
+.dropdown_5columns {width: 700px;}
+
+.dropdown_5columns {
+	left:-1px;
+	top:auto;
+}
+
+.dropdown_5colums:hover {
+	visibility: visible;
+}
+
+.dropdown_5columns p {
+	font-weight: bold;
+}
+
+.col_1,
+.col_11 {
+	display:inline;
+	float: left;
+	position: relative;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.col_2,
+.col_22,
+.col_3{
+    display:inline;
+	float: left;
+	position: relative;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 15%;
+}
+.col_1 {width:130px;}
+.col_2 {width:130px;}
+.col_11{width: 195px;}
+.col_22{width: 195px;}
+.col_1_down {
+	margin-top: 5%;
+	text-align: left;
+}
+
+.col_1_down a{
+	cursor: pointer;
+	color: #FFF;
+    padding: 7% !important;
+    text-decoration: none;
+    display: block;
+}
+
+.col_1_down li {
+	width: 100%;
+}
+
+.col_1_down ul  {
+	margin-top: -20%;
+}
+
+.col_1_down ul li {
+	visibility: hidden;
+	margin-left: 100%;
+	margin-top: -10%;
+}
+
+.col_1_down ul li a{
+	margin-top: -10% !important;
+}
+
+.col_1_down ul:hover li {
+	visibility: visible;
+}
+
+.arrow {
+ 	background: url("../img/icon/arrowgold.png") 55px no-repeat;
+ 	background-size: 12%;
+}
+
+.arrow ul li {
+	z-index: 999;
+	background-color: black;
+	margin-top: 0%;
+	width: 90%;
+	border-right: 1px solid #777777;
+	border-left: 1px solid #777777;
+}
+
+.arrow ul li:first-child {
+	border-top: 1px solid #777777;
+}
+
+.arrow ul li:last-child {
+	border-bottom: 1px solid #777777;
+}
+
+.col_1_down_2 {
+	margin-top: 5%;
+	text-align: left;
+}
+
+.col_1_down_2 li {
+	width: 100%;
+}
+
+.col_1_down_2 ul  {
+	margin-top: -10%;
+}
+
+.col_1_down_2 ul li {
+	visibility: hidden;
+	margin-left: 85%;
+}
+
+
+.col_1_down_2 ul:hover li {
+	visibility: visible;
+}
+
+.col_1_down_2 a{
+	cursor: pointer;
+	color: #FFF;
+    padding: 0% !important;
+    text-decoration: none;
+    display: block;
+}
+
+.arrow_2 {
+ 	background: url("../img/icon/arrowgold.png") 110px no-repeat;
+ 	background-size: 7%;
+}
+
+.arrow_2 ul li {
+	z-index: 999;
+	background-color: black;
+	width: 70%;
+	border-right: 1px solid #777777;
+	border-left: 1px solid #777777;
+}
+
+.arrow_2 ul li:first-child {
+	border-top: 1px solid #777777;
+}
+
+.arrow_2 ul li:last-child {
+	border-bottom: 1px solid #777777;
+}
+
+.arrow_3 {
+ 	background: url("../img/icon/arrowgold.png") 125px no-repeat;
+ 	background-size: 7%;
+}
+
+.arrow_3 ul li {
+	z-index: 999;
+	background-color: black;
+	width: 70%;
+	border-right: 1px solid #777777;
+	border-left: 1px solid #777777;
+}
+
+.arrow_3 ul li:first-child {
+	border-top: 1px solid #777777;
+}
+
+.arrow_3 ul li:last-child {
+	border-bottom: 1px solid #777777;
+}
+
+.arrow_4 {
+ 	background: url("../img/icon/arrowgold.png") 75px no-repeat;
+ 	background-size: 8%;
+}
+
+.arrow_4 ul li {
+	z-index: 999;
+	background-color: black;
+	margin-top: 0%;
+	width: 90%;
+	border-right: 1px solid #777777;
+	border-left: 1px solid #777777;
+}
+
+.arrow_4 ul li:first-child {
+	border-top: 1px solid #777777;
+}
+
+.arrow_4 ul li:last-child {
+	border-bottom: 1px solid #777777;
+}

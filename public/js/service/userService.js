@@ -1,6 +1,6 @@
 var kriApp = angular.module('kriapp');
 
-kriApp.service('userService', ['$q', '$http', function($q, $http) {
+kriApp.service('userService', ['$q', '$http', '$cookieStore', '$rootScope', function($q, $http, $cookieStore, $rootScope) {
 
     var self = null;
     var mail = "";
@@ -18,15 +18,38 @@ kriApp.service('userService', ['$q', '$http', function($q, $http) {
                   self = data.data.data.token;      // mi salvo l'utente corrente
                   mail = email;
                   isAdmin = data.data.data.admin;
+                  SetCredentials(mail, psw, isAdmin); 
                   deferred.resolve(self);
                  })
              .catch(function(err, code) 
                  { 
                   self = null; // resetto l'utente
                   deferred.reject(err.messaggio);
-                 });
+                 });  
         return deferred.promise; 
     }  
+
+    function SetCredentials(email, password, isAdmin) {
+            $rootScope.globals = {
+                currentUser: {
+                    email: email,
+                    password: password,
+                    isAdmin: isAdmin
+                }
+            };
+            $cookieStore.put('globals', $rootScope.globals);
+    }
+    
+   this.logout = function(){
+        self=null;
+        ClearCredentials();
+    }
+
+    function ClearCredentials() {
+            $rootScope.globals = {};
+            $cookieStore.remove('globals');
+        };        
+
 
     this.isLogged = function() {
       if(self == null) return false;

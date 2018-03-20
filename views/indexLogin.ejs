@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="././public/css/style.css"/>
+<link rel="stylesheet" href="././public/css/styleLogged.css"/>
 <header>           
             <div class="header">
                 <div class="logo">
@@ -145,7 +145,13 @@
                 </ul>
             </div>
             <div class="nav-right">   
-                    <div class="usericon"></div><a class="userText" href="#!/login">Account</a>
+                    <div class="usericon"></div>
+                    <ul><li><a class="userText" href="#!/login">Account</a>
+                    <ul>
+                    <li><a href="#!/useraccount">Profilo</a></li><br><br>
+                    <li><a href="#!/" ng-click="logout()">Logout</a></li>
+                    </ul></li>
+                    </ul>
             </div>
             </div>
             <div class="shopCar">

@@ -1,6 +1,6 @@
-angular.module('myApp.controllers', ['ngAnimate', 'ngTouch', 'ngFader'])
-.controller('mainController', ['$scope','userService', '$location', '$state',
-function($scope, userService, $location, $state) {
+angular.module('myApp.controllers', ['ngAnimate', 'ngTouch', 'ngFader', 'ngCookies'])
+.controller('mainController', ['$scope','userService', '$location', '$state', '$http', '$cookieStore', '$rootScope',
+function($scope, userService, $location, $state, $http, $cookieStore, $rootScope) {
     
     isLogged = false;
     
@@ -10,7 +10,18 @@ function($scope, userService, $location, $state) {
         $state.go('home');
     }
 
-    if(isLogged == false) {
+    $rootScope.globals = $cookieStore.get('globals') || {};
+    console.log($rootScope.globals.currentUser);
+    if($rootScope.globals.currentUser != null) {
+        if($rootScope.globals.currentUser.isAdmin == true) {
+             $state.go('loggedHomeAdmin');
+        }    
+        else {
+            $state.go('loggedHome');
+        }
+    }
+
+  /*  if(isLogged == false) {
     	if(userService.isLogged() == true) {
     		if(userService.isAdmin() == true) {
                 $state.go('loggedHomeAdmin');
@@ -22,6 +33,6 @@ function($scope, userService, $location, $state) {
     	else {
     		$state.go('home');
     	}
-    }
+    }*/
    
 }]);
