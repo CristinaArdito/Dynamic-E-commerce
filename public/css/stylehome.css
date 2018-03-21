@@ -224,6 +224,119 @@
 .cont {
     background-color: #000;
 }
+
+.contmonitor {
+    width: 100%;
+}
+
+.contmotherboard {
+    width: 100%;
+    height: auto;
+}
+
+.vetrina{
+    width: 40%;
+    margin-left: 3%;
+    float: left;
+    margin-top: 10%;
+}
+
+.vetrinamotherboard {
+    width: 40%;
+    margin-left: 12%;
+    margin-top: 12%;
+    float: left;
+}
+
+.motherboard {
+    float: left;
+}
+
+.mouse {
+    margin-top: 7%;
+    float: right;
+}
+
+.contvideocards {
+    width: 100%;
+    height: auto;
+}
+
+.videocard {
+    position: relative;
+    margin-left: 50%;
+}
+
+.vetrinavideocard {
+    width: 40%;
+    margin-top: -40%;
+    margin-left: 3%;
+    float: left;
+}
+
+.product {
+  cursor: pointer;
+  background-color:Black;
+  float: left;
+  height: 280px;
+  width: 48%;
+  margin-left: 1%;
+  margin-top: 1%;
+  color: #000;
+  border-style: solid;
+  border-width: 0.01px;
+  border-color:Gray;
+  border-radius: 10px;
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  -moz-transition: -moz-transform 0.4s ease-in-out;
+  -o-transition: -o-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out; 
+}
+
+.product a {
+    text-decoration: none;
+}
+
+.product:hover {
+
+  -webkit-transform: scale(1.1, 1.2);
+  -moz-transform: scale(1.1, 1.2);
+  -o-transform: scale(1.1, 1.2);
+  transform: scale(1.1, 1.2);
+}
+
+.product ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.product li{
+  padding: 14px;
+  text-align: center;
+}
+
+.product .prezzo{
+  color: #3476B6;
+  font-size: 1.3em;
+  margin-top: -1%;
+}
+
+.product .nome {
+    color: White;
+    padding-top: 7px;
+    font-size: 1.5em;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    height: 15%;
+}
+
+.monitor {
+    float: left;
+    margin-left: 10%;
+}
+
 /***************************************************
      Footer
 ***************************************************/

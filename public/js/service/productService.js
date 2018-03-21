@@ -63,7 +63,6 @@ this.uploadImg = function(data, url) {
           'data' : data, 'url' : url
         })
         .then(function(urlName){
-          console.log("SONO QUI");
           deferred.resolve(urlName);
         })
       }

@@ -2,16 +2,29 @@
 <div class="slideshow">
     <ng-fader></ng-fader>
 </div>
+
 <div class="cont">
-<img style="margin-left: 55%;" src="././public/img/homepage/monitor.png"></img>
-<img src="././public/img/homepage/cpu.png"></img>
-<img src="././public/img/homepage/ram.png"></img>
-<img src="././public/img/homepage/case.png"></img>
-<img src="././public/img/homepage/schedemadri.png"></img><br>
-<img src="././public/img/homepage/mouse&tastiere.png"></img>
-<img src="././public/img/homepage/ssd.png"></img>
-<img src="././public/img/homepage/speakers.png"></img>
-<img style="margin-left: 55%;" src="././public/img/homepage/schedevideo2.png"></img>
+    <div class="contmonitor">
+        <section class="vetrina" id="vetrina" ng-init="showMonitors(4)" ng-controller="productsController">
+        </section>
+        <img class="monitor" src="././public/img/homepage/monitor.png"></img>
+    </div>    
+    <img src="././public/img/homepage/cpu.png"></img>
+    <img src="././public/img/homepage/ram.png"></img>
+    <img src="././public/img/homepage/case.png"></img>
+    <div class="contmotherboard">
+        <img class="motherboard" src="././public/img/homepage/schedemadri.png"></img>
+        <section class="vetrinamotherboard" id="motherboard" ng-init="showMotherboards(4)" ng-controller="productsController">
+        </section>
+    </div>
+    <img class="mouse" src="././public/img/homepage/mouse&tastiere.png"></img>
+    <img src="././public/img/homepage/ssd.png"></img>
+    <img src="././public/img/homepage/speakers.png"></img>
+    <div class="contvideocards">
+        <img class="videocard" src="././public/img/homepage/schedevideo2.png"></img>
+        <section class="vetrinavideocard" id="videocard" ng-init="showVideoCards(4)" ng-controller="productsController">
+        </section>
+    </div>    
 
 </div>
 <!-- Footer -->
