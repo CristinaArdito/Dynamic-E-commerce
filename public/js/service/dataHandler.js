@@ -38,11 +38,26 @@ kriApp.factory("dataHandler", function() {
       var savedData = null;
       var indice = -1;
     }
+
+    function getIndex(index) {
+      return savedData[index];
+    }
+
+    function setIndice(i) {
+      indice = i;
+    }
+
+    function getIndice() {
+      return indice;
+    }
     return {
      set: set,
      get: get,
      get_nonreset: get_nonreset,
      reset : reset,
+     getIndex : getIndex,
+     setIndice : setIndice,
+     getIndice : getIndice,
     }
    
    })

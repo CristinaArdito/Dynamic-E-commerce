@@ -29,7 +29,10 @@ angular.module('kriapp', ['myApp.services', 'myApp.controllers', 'ngRoute', 'ui.
                 templateUrl : 'views/back-end/addProduct.ejs',
                 controller: 'addProductController'
             }) 
-
+            .when('/singleproduct', {
+                templateUrl : 'views/front-end/singleproduct.ejs',
+                controller  : 'singleController'
+            })  
 
 
 /***** ROUTE VIEW UI *****/

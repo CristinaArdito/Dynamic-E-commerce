@@ -1,0 +1,211 @@
+.cont {
+    width: 100%;
+    height: 90%;
+    margin: 0;
+    padding: 0;
+    margin-top: -5%;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.prec {
+    position: relative;
+    margin-left: 5%;
+    margin-top: 3%;
+    height: 60px;
+    width: 65px;
+    background: url("../img/icon/previous.png") no-repeat;
+    background-size: 80%;
+}
+
+.nomeprod {
+    position: relative;
+    font-size: 22pt;
+    font-weight: bold;
+    margin-top: 5%;
+    margin-left: 40%;
+}
+
+.titolodesc {
+    position: relative;
+    margin-left: 40%;
+    margin-top: -16%;
+}
+
+.descr {
+    position: relative;
+    width: 40%;
+    margin-left: 47%;
+    margin-top: -2.1%;
+}
+
+.titolocat {
+    position: relative;
+    margin-left: 40%;
+    margin-top: 1%;
+}
+
+.cat {
+    position: relative;
+    margin-left: 47%;
+    margin-top: -1.1%;
+}
+
+.titolopeso {
+    position: relative;
+    margin-left: 40%;
+    margin-top: 1%;
+}
+
+.peso {
+    position: relative;
+    margin-left: 47%;
+    margin-top: -1.1%;
+}
+
+.titoloprez {
+    position: relative;
+    margin-left: 40%;
+    margin-top: 1%;
+}
+
+.prezzoprod {
+    position: relative;
+    margin-left: 47%;
+    margin-top: -1.1%;
+}
+
+.addtitolo {
+    position: relative;
+    margin-left: 40%;
+    margin-top: 2%;
+}
+
+.addproduct {
+    position: relative;
+    margin-left: 50%;
+    margin-top: -1.6%;
+}
+
+.inputprod {
+    padding: 7.5px;
+}
+
+.but {
+    position: relative;
+    margin-left: 58.30%;
+    margin-top: -1.78%;
+}
+
+button {
+    background-color: rgb(254,231,154) !important; 
+    background-color: -moz-linear-gradient(top,  rgba(254,231,154,1) 0%, rgba(254,193,81,1) 100%) !important;
+    background-color: -webkit-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%) !important;
+    background-color: -o-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%) !important;
+    background-color: -ms-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%) !important;
+    background-color: linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%) !important;
+    background: url("../img/icon/commerce2.png") 15px no-repeat;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec151', endColorstr='#fee79a',GradientType=0 );
+    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;
+    -moz-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;
+    -ms-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;
+    -o-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;
+    border: 1px solid #D69E31;
+    color: #85592e;
+    cursor: pointer;
+    height: 34px;
+    width: 50px;
+}
+
+button:hover {
+    background-color: rgb(254,193,81) !important;
+    background-color: -moz-linear-gradient(top,  rgba(254,193,81,1) 0%, rgba(254,231,154,1) 100%) !important;
+    background-color: -webkit-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%) !important;
+    background-color: -o-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%) !important;
+    background-color: -ms-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%) !important;
+    background-color: linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec151', endColorstr='#fee79a',GradientType=0 );
+    background: url("../img/icon/commerce2.png") 15px no-repeat;
+}
+
+.avviso {
+    position: relative;
+    margin-left: 42%;
+    margin-top: -1.1%;
+    cursor: pointer;
+}
+
+.iconavv {
+    background: url("../img/icon/alarm.png") no-repeat;
+    margin-left: 40%;
+    margin-top: 3%;
+    height: 20px;
+    width: 20px;
+}
+
+/***************************************************
+     Footer
+***************************************************/
+.footer {
+    background-color: #161616;
+    color: #fff;
+    margin-top: 30%;
+}
+
+.footer h4 {
+    color: rgb(254,231,154);
+    text-transform: uppercase;
+}
+
+.firstrow {
+    float: left;
+    margin-left: 5%;
+    text-align: center;
+    width: 20%;
+}
+
+
+.firstrow .img {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.firstrow .imginner {
+    margin-left: 4%;
+}
+
+.firstrow .img img:hover {
+     -webkit-filter: drop-shadow(1px 1px 1px #fff);
+     filter: drop-shadow(1px 1px 1px #fff); 
+}
+
+.secondrow {
+    float: left;
+    margin-left: 20%;
+    text-align: center;
+}
+
+.secondrow li {
+    list-style: none;
+    text-align: center;
+}
+
+.secondrow li:first-child {
+    margin-top: 2%;
+}
+.secondrow a {
+    text-decoration: none;
+    color: #fff
+}
+
+.secondrow a:hover {
+        text-shadow: 0px 0px 1px #FFF;
+}
+
+.lastrow {
+    margin-left: 70%;
+    text-align: center;
+}
+.rights {
+    text-align: center;
+}
