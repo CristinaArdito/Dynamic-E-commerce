@@ -80,11 +80,15 @@ kriApp.controller('addProductController', ['$scope', '$compile', 'fileUpload', '
    {
 
     $scope.showMonitors = function(n) {
+        productService.getProducts()
+        .then(function(data) {
+            dataHandler.set(data);
+        });
         productService.getProductsByCat("Monitor")
         .then(function(data) {
             var html = "";
             var x;
-            dataHandler.set(data);
+            
 
             var monitors = [];
             for(i=0;i<data.length;i++){
@@ -118,7 +122,6 @@ kriApp.controller('addProductController', ['$scope', '$compile', 'fileUpload', '
         .then(function(data) {
             var html = "";
             var x;
-            dataHandler.set(data);
 
             var monitors = [];
             for(i=0;i<data.length;i++){
@@ -129,16 +132,17 @@ kriApp.controller('addProductController', ['$scope', '$compile', 'fileUpload', '
                 if(i >= data.length) break;
                 x = Math.floor(Math.random() * data.length);
                 if(monitors[x] == false) {
-
+                    var index = data[x].code;
                     monitors[x] = true;
-
-                background = "'"+data[x].url+"'";
-                html += '<div class="product">'+
-                        '<div class="nome">'+data[x].name+'</div>'+
-                        '<ul><li ng-click="Details('+x+')" style="background: url('+background+') no-repeat;  background-size: 68%;'+
-                        'height: 160px; margin-left: 25%;"></li>'+
-                        '<li><div class="prezzo">&euro;'+data[x].price+'</div></li>'+
-                        '</ul></a></div>';
+                    //console.log("data[x]"+data[x].code);
+                    //console.log(x);
+                    background = "'"+data[x].url+"'";
+                    html += '<div class="product">'+
+                            '<div class="nome">'+data[x].name+'</div>'+
+                            '<ul><li ng-click="Details('+index+')" style="background: url('+background+') no-repeat;  background-size: 68%;'+
+                            'height: 160px; margin-left: 25%;"></li>'+
+                            '<li><div class="prezzo">&euro;'+data[x].price+'</div></li>'+
+                            '</ul></a></div>';
                 }else{
                     i--;
                 }
@@ -152,7 +156,7 @@ kriApp.controller('addProductController', ['$scope', '$compile', 'fileUpload', '
         .then(function(data) {
             var html = "";
             var x;
-            dataHandler.set(data);
+           
 
             var monitors = [];
             for(i=0;i<data.length;i++){
@@ -193,36 +197,38 @@ function($scope, $compile, $location, dataHandler, userService, productService) 
  $scope.showSingleProduct = function(){
 
         var indice = dataHandler.getIndice();
-        var data = dataHandler.getIndex(indice);
+        productService.searchProductByIndex(indice)
+        .then(function(data) {
 
+            background = "'"+data.url+"'";
+            item = data;
 
-        background = "'"+data.url+"'";
-        item = data;
+            html = '<div class="nomeprod">'+data.name+'</div>'+
+                   '<div class="img" style="background: url('+background+') no-repeat; margin-left: 20%; width: 20%;'+
+                                           'height: 380px; margin-left: 15%; background-size: 100%;'+
+                                           'position: relative"></div>'+
+                   '<div class="titolodesc">DESCRIZIONE: </div>'+
+                   '<div style="visibility:hidden;" id="productCode">'+data.code+'</div>'+
+                   '<div class="descr">'+data.desc+'</div>'+
+                   '<div class="titolocat">CATEGORIA: </div><div class="cat">'+data.categories+'</div>'+
+                   '<div class="titolopeso">PESO: </div> <div class="peso">'+data.weight+'</div>'+
+                   '<div class="titoloprez">PREZZO: </div><div class="prezzoprod">&euro;'+data.price+'</div>';
+                   if(data.quantity > 5)
+                        html += '<div class="titoloprez">Disponibile</div><div hidden="true" class="prezzoprod">'+data.quantity+'</div>'+
+                                '<div class="addtitolo">Aggiungi al carrello:</div>'+
+                                '<div class="addproduct"><input id="addproduct" class="inputprod" type="number" min="1" value="1"></input></div>'+
+                                '<div class="but"><button type="submit" id="submitbutton" class="idbutton" ng-click="addToCart('+indice+')"></button></div>';
+                   else if(data.quantity<=5 && data.quantity>0)
+                        html += '<div class="titoloprez">QUANTIT&#193;:</div><div class="prezzoprod">'+data.quantity+'</div>'+
+                                '<div class="addtitolo">Aggiungi al carrello:</div>'+
+                                '<div class="addproduct"><input id="addproduct" class="inputprod" type="number" min="1" value="1"></input></div>'+
+                                '<div class="but"><button type="submit" id="submitbutton" class="idbutton" ng-click="addToCart('+indice+')"></button></div>';
+                   else if(data.quantity== 0) 
+                        html += '<div class="iconavv" ng-click="reminder()"></div><div class="avviso" ng-click="reminder()">Avvisami quando ritornerà disponibile</div>';
 
-        html = '<div class="nomeprod">'+data.name+'</div>'+
-               '<div class="img" style="background: url('+background+') no-repeat; margin-left: 20%; width: 20%;'+
-                                       'height: 380px; margin-left: 15%; background-size: 100%;'+
-                                       'position: relative"></div>'+
-               '<div class="titolodesc">DESCRIZIONE: </div>'+
-               '<div style="visibility:hidden;" id="productCode">'+data.code+'</div>'+
-               '<div class="descr">'+data.desc+'</div>'+
-               '<div class="titolocat">CATEGORIA: </div><div class="cat">'+data.categories[0]+'</div>'+
-               '<div class="titolopeso">PESO: </div> <div class="peso">'+data.weight+'</div>'+
-               '<div class="titoloprez">PREZZO: </div><div class="prezzoprod">&euro;'+data.price+'</div>';
-               if(data.quantity > 5)
-                    html += '<div class="titoloprez">Disponibile</div><div hidden="true" class="prezzoprod">'+data.quantity+'</div>'+
-                            '<div class="addtitolo">Aggiungi al carrello:</div>'+
-                            '<div class="addproduct"><input id="addproduct" class="inputprod" type="number" min="1" value="1"></input></div>'+
-                            '<div class="but"><button type="submit" id="submitbutton" class="idbutton" ng-click="addToCart('+indice+')"></button></div>';
-               else if(data.quantity<=5 && data.quantity>0)
-                    html += '<div class="titoloprez">QUANTIT&#193;:</div><div class="prezzoprod">'+data.quantity+'</div>'+
-                            '<div class="addtitolo">Aggiungi al carrello:</div>'+
-                            '<div class="addproduct"><input id="addproduct" class="inputprod" type="number" min="1" value="1"></input></div>'+
-                            '<div class="but"><button type="submit" id="submitbutton" class="idbutton" ng-click="addToCart('+indice+')"></button></div>';
-               else if(data.quantity== 0) 
-                    html += '<div class="iconavv" ng-click="reminder()"></div><div class="avviso" ng-click="reminder()">Avvisami quando ritornerà disponibile</div>';
+                   angular.element(document.getElementById('singleProduct')).append($compile(html)($scope));
+           });
 
-               angular.element(document.getElementById('singleProduct')).append($compile(html)($scope));
     }
 
 

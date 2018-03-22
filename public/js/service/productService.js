@@ -69,5 +69,23 @@ this.uploadImg = function(data, url) {
       return deferred.promise;
 }
 
+this.searchProduct = function(product) {
+  var deferred = $q.defer();
+  $http.post("././api/product/searchproduct", {'data' : product})
+  .then(function(data) {
+    deferred.resolve(data.data.data);
+  })
+  return deferred.promise;
+}
+
+this.searchProductByIndex = function(index) {
+  var deferred = $q.defer();
+  $http.post("././api/product/searchproductbyindex", {'data' : index})
+  .then(function(data) {
+    deferred.resolve(data.data.data);
+  })
+  return deferred.promise;
+}
+
 
 }]).run(function(productService) {});

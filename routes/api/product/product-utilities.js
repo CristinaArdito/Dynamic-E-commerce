@@ -57,3 +57,50 @@ this.getProductsByCat = function(category){
     });
   return deferred.promise;
 }
+
+this.searchProduct = function(q){
+    var deferred = Q.defer();
+    Product.findOne({"name":q})
+        .then(function(product)
+            {
+                if(product!=null){
+                    console.log("get product by name (single) "+JSON.stringify(product));
+                    deferred.resolve(product);
+                }else{
+                    Product.find({ "name" : {$regex : q}})
+                        .then(function(product) 
+                            { 
+                                if(product.length!=0){
+                                    console.log("get product by name "+JSON.stringify(product));
+                                    deferred.resolve(product); 
+                                }else{
+                                    console.log("entro in categories");
+                                    Product.find({ "categories" : q})
+                                        .then(function(product) 
+                                        { 
+                                            console.log("get product by categories "+JSON.stringify(product));
+                                            deferred.resolve(product); 
+                                        });
+                                }
+                            });
+                }
+            })
+            .catch(function(err)
+            {
+                logger.error('[getAllProducts] '+err);
+                deferred.reject({code:"", msg:err});  
+            });
+    return deferred.promise;
+}
+
+this.searchProductByIndex = function(c){
+    var deferred = Q.defer();
+    Product.findOne({"code":c})
+        .then(function(product){
+            deferred.resolve(product);
+        })
+        .catch(function(err){
+            deferred.reject(err);
+        });
+    return deferred.promise;
+}

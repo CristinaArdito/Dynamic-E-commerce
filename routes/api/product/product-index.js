@@ -140,3 +140,21 @@ productRoutes.post('/upload', function(req, res) {
         urlName: url});
     }
 });
+
+productRoutes.post('/searchproduct', function(req, res) {
+    product_utilities.searchProduct(req.body.data)
+    .then(function(product) {
+        res.status(201).json({ success: true , 
+        msg:"prodotto trovato", 
+        data:product});      
+      });
+});
+
+productRoutes.post('/searchproductbyindex', function(req, res) {
+    product_utilities.searchProductByIndex(req.body.data)
+    .then(function(product) {
+        res.status(201).json({ success: true , 
+        msg:"prodotto trovato", 
+        data:product});      
+      });
+});
