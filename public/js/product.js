@@ -80,28 +80,25 @@ kriApp.controller('addProductController', ['$scope', '$compile', 'fileUpload', '
    {
 
     $scope.showMonitors = function(n) {
+        
         productService.getProducts()
-        .then(function(data) {
-            dataHandler.set(data);
-        });
-        productService.getProductsByCat("Monitor")
         .then(function(data) {
             var html = "";
             var x;
-            
-
+            var index = 0;
             var monitors = [];
             for(i=0;i<data.length;i++){
                 monitors[i] = false;
             }
 
-            for(i=0; i<n; i++) {
-                if(i >= data.length) break;
+            while(index<4) {
+            for(i=0; i<data.length; i++) {
+              //  if(i >= data.length) break;
                 x = Math.floor(Math.random() * data.length);
                 if(monitors[x] == false) {
-
+                    if(data[x].categories[0] == "Monitor") {
                     monitors[x] = true;
-
+                    index++;
                 background = "'"+data[x].url+"'";
                 html += '<div class="product">'+
                         '<div class="nome">'+data[x].name+'</div>'+
@@ -109,67 +106,73 @@ kriApp.controller('addProductController', ['$scope', '$compile', 'fileUpload', '
                         'height: 160px; margin-left: 25%;"></li>'+
                         '<li><div class="prezzo">&euro;'+data[x].price+'</div></li>'+
                         '</ul></a></div>';
-                }else{
-                    i--;
                 }
             }
+            }
+        }
             angular.element(document.getElementById('vetrina')).append($compile(html)($scope));
         })    
     }  
 
     $scope.showMotherboards = function(n) {
-        productService.getProductsByCat("Motherboard")
+        productService.getProducts()
         .then(function(data) {
             var html = "";
             var x;
+            var index = 0;
+            dataHandler.set(data);
+            var motherboard = [];
 
-            var monitors = [];
             for(i=0;i<data.length;i++){
-                monitors[i] = false;
+                motherboard[i] = false;
             }
 
-            for(i=0; i<n; i++) {
-                if(i >= data.length) break;
+            while(index<4) {
+            for(i=0; i<data.length; i++) {
+               // if(i >= data.length) break;
                 x = Math.floor(Math.random() * data.length);
-                if(monitors[x] == false) {
-                    var index = data[x].code;
-                    monitors[x] = true;
-                    //console.log("data[x]"+data[x].code);
-                    //console.log(x);
+                if(motherboard[x] == false) {                   
+                   if(data[x].categories[0] == "Motherboard") {
+                    
+                        console.log(index);
+                        index++;
+                    motherboard[x] = true;
                     background = "'"+data[x].url+"'";
                     html += '<div class="product">'+
                             '<div class="nome">'+data[x].name+'</div>'+
-                            '<ul><li ng-click="Details('+index+')" style="background: url('+background+') no-repeat;  background-size: 68%;'+
+                            '<ul><li ng-click="Details('+x+')" style="background: url('+background+') no-repeat;  background-size: 68%;'+
                             'height: 160px; margin-left: 25%;"></li>'+
                             '<li><div class="prezzo">&euro;'+data[x].price+'</div></li>'+
                             '</ul></a></div>';
-                }else{
-                    i--;
+                        }
+                           
                 }
             }
+        }
             angular.element(document.getElementById('motherboard')).append($compile(html)($scope));
         })    
     }   
 
     $scope.showVideoCards = function(n) {
-        productService.getProductsByCat("Videocard")
+        productService.getProducts()
         .then(function(data) {
             var html = "";
             var x;
-           
+            var index = 0;
 
-            var monitors = [];
+            var videocard = [];
             for(i=0;i<data.length;i++){
-                monitors[i] = false;
+                videocard[i] = false;
             }
 
-            for(i=0; i<n; i++) {
-                if(i >= data.length) break;
+            while(index<4) {
+            for(i=0; i<data.length; i++) {
+                //if(i >= data.length) break;
                 x = Math.floor(Math.random() * data.length);
-                if(monitors[x] == false) {
-
-                    monitors[x] = true;
-
+                if(videocard[x] == false) {
+                    if(data[x].categories[0] == "Videocard") {
+                    videocard[x] = true;
+                    index++;
                 background = "'"+data[x].url+"'";
                 html += '<div class="product">'+
                         '<div class="nome">'+data[x].name+'</div>'+
@@ -177,10 +180,10 @@ kriApp.controller('addProductController', ['$scope', '$compile', 'fileUpload', '
                         'height: 160px; margin-left: 25%;"></li>'+
                         '<li><div class="prezzo">&euro;'+data[x].price+'</div></li>'+
                         '</ul></a></div>';
-                }else{
-                    i--;
                 }
             }
+            }
+        }
             angular.element(document.getElementById('videocard')).append($compile(html)($scope));
         })    
     }
@@ -197,8 +200,7 @@ function($scope, $compile, $location, dataHandler, userService, productService) 
  $scope.showSingleProduct = function(){
 
         var indice = dataHandler.getIndice();
-        productService.searchProductByIndex(indice)
-        .then(function(data) {
+        var data = dataHandler.getIndex(indice);
 
             background = "'"+data.url+"'";
             item = data;
@@ -227,7 +229,7 @@ function($scope, $compile, $location, dataHandler, userService, productService) 
                         html += '<div class="iconavv" ng-click="reminder()"></div><div class="avviso" ng-click="reminder()">Avvisami quando ritornerà disponibile</div>';
 
                    angular.element(document.getElementById('singleProduct')).append($compile(html)($scope));
-           });
+          
 
     }
 
