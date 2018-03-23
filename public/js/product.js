@@ -212,22 +212,29 @@ function($scope, $compile, $location, dataHandler, userService, productService) 
                    '<div class="titolodesc">DESCRIZIONE: </div>'+
                    '<div style="visibility:hidden;" id="productCode">'+data.code+'</div>'+
                    '<div class="descr">'+data.desc+'</div>'+
-                   '<div class="titolocat">CATEGORIA: </div><div class="cat">'+data.categories+'</div>'+
-                   '<div class="titolopeso">PESO: </div> <div class="peso">'+data.weight+'</div>'+
-                   '<div class="titoloprez">PREZZO: </div><div class="prezzoprod">&euro;'+data.price+'</div>';
+                   '<div class="titolocat">CATEGORIA: </div><div class="cat">'+data.categories[0]+'</div>'+
+                   '<div class="titolopeso">PESO: </div> <div class="peso">'+data.weight+'kg</div>'+
+                   '<div class="titoloprez">PREZZO: </div><div class="prezzoprod">'+data.price+'&euro;<span class="tasse">iva incl.</span></div>';
                    if(data.quantity > 5)
                         html += '<div class="titoloprez">Disponibile</div><div hidden="true" class="prezzoprod">'+data.quantity+'</div>'+
                                 '<div class="addtitolo">Aggiungi al carrello:</div>'+
                                 '<div class="addproduct"><input id="addproduct" class="inputprod" type="number" min="1" value="1"></input></div>'+
                                 '<div class="but"><button type="submit" id="submitbutton" class="idbutton" ng-click="addToCart('+indice+')"></button></div>';
                    else if(data.quantity<=5 && data.quantity>0)
-                        html += '<div class="titoloprez">QUANTIT&#193;:</div><div class="prezzoprod">'+data.quantity+'</div>'+
+                        html += '<div class="titoloprez">QUANTIT&#193;:</div><div class="qtaprod">'+data.quantity+'</div>'+
                                 '<div class="addtitolo">Aggiungi al carrello:</div>'+
                                 '<div class="addproduct"><input id="addproduct" class="inputprod" type="number" min="1" value="1"></input></div>'+
                                 '<div class="but"><button type="submit" id="submitbutton" class="idbutton" ng-click="addToCart('+indice+')"></button></div>';
                    else if(data.quantity== 0) 
                         html += '<div class="iconavv" ng-click="reminder()"></div><div class="avviso" ng-click="reminder()">Avvisami quando ritornerà disponibile</div>';
-
+                   html+= '<div class="pagamenti"> <h4>Pagamenti sicuri con:</h4><div><span>'+
+                          '<div class="picture"><picture><img height="50" width="50" src="././public/img/paypal.png"></img></picture>'+
+                          '<picture><img src="././public/img/mastercard.png"></img></picture>'+
+                          '<picture><img height="50" width="50" src="././public/img/postepay.png"></img></picture>'+
+                          '<picture><img height="50" width="50" src="././public/img/visa.png"></img></picture>'+
+                          '<picture><img height="50" width="50" src="././public/img/american-express2.png"></img></picture>'+
+                          '</span></div></div></div>';
+                   html+= '<div class="freedelivery"> <span class="deliverytext">Per un ordine di importo superiore a 150,00€ la spedizione è GRATUITA!</span></div>'       
                    angular.element(document.getElementById('singleProduct')).append($compile(html)($scope));
           
 
