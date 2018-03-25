@@ -104,8 +104,9 @@
 .header .logo {
     height: 100%;
     width: 20%;
-    background: url("../img/think.jpg") 20px no-repeat;
-    background-size: 80%;
+    background: url("../img/logo2.png") 20px no-repeat;
+    background-size: 70%;
+    margin-left: 2%;
 }
 
 .menu .homeicon {
@@ -123,6 +124,9 @@
 	width: 50px;
 }
 
+.menu .menuhidden {
+    visibility: hidden;
+}
 .menu ul ul {
     position: absolute;
     top: 80%;
@@ -462,4 +466,44 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 
 .arrow_4 ul li:last-child {
 	border-bottom: 1px solid #777777;
+}
+
+.menuhidden{
+    visibility: hidden;
+}
+
+@media screen and (max-width: 600px) {
+
+    .header .logo {
+        background: url("../img/logo.png") 20px no-repeat;
+        background-size: 80%;
+        margin-left: 0%;
+    }
+
+    .menu li {
+        visibility: hidden;
+    }
+
+    .menuhidden a:first-child{
+        visibility: visible !important;
+        position: relative;
+        margin-top: -30%;
+        margin-left: -500%;
+    }
+ 
+    .menuhidden a:first-child:hover {
+        visibility: hidden;
+    }
+
+    .menuhidden:hover{
+        visibility: visible !important; 
+        position: relative;
+        margin-left: -50%;  
+        margin-top: 10%; 
+    } 
+
+    .dropdown_5columns, .col_1, .col_1_down, .col_2, .col_1_down_2, .col_22 {
+        visibility: hidden !important;
+    }
+
 }
