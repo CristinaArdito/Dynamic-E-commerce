@@ -134,7 +134,7 @@ kriApp.controller('addProductController', ['$scope', '$compile', 'fileUpload', '
                 if(motherboard[x] == false) {                   
                    if(data[x].categories[0] == "Motherboard") {
                     
-                        console.log(index);
+                        //console.log(index);
                         index++;
                     motherboard[x] = true;
                     background = "'"+data[x].url+"'";
@@ -241,10 +241,127 @@ function($scope, $compile, $location, dataHandler, userService, productService) 
     }
 
 
+}]).controller('categoryController', ['$scope', '$compile', 'dataHandler','productService','$location', '$window', 
+function($scope, $compile, dataHandler, productService, $location, $window) {
 
+//=============================================================================================
+    //Pager per creazione pagine
+    $scope.showPager = function(index){
+        
+        var total = dataHandler.get_nonreset().length;
+        var pages = Math.ceil(total/10);
 
+        html = "<div class='topbutton'><button id='prev' ng-click='Previous("+index+")'>◀</button>";
 
+        for(i=0;i<pages;i++){
+            if(i==index){
+                html += "<button style='color: #1976d2;' ng-click='showPage("+(i*10)+")'>"+(i+1)+"</button>";
+            }else html += "<button ng-click='showPage("+(i*10)+")'>"+(i+1)+"</button>";
+        }
 
+        html += "<button id='succ' ng-click='Succesive("+index+")'>▶</button></div>";
 
+        angular.element(document.getElementById('showCat')).append($compile(html)($scope));
 
+        
+    }
+
+    $scope.showPage = function(n){
+        
+        angular.element(document.getElementById('showCat')).empty();
+        $scope.showContent(dataHandler.get_nonreset(),n,(n+10));
+        $scope.showPager((n/10));
+        $window.scrollTo(0, 0);
+    }
+
+    $scope.Previous = function(index){
+        if(index > 0){
+            $scope.showPage((index-1)*10);
+            $window.scrollTo(0, 0);
+        }
+    }
+
+    $scope.Succesive = function(index){
+        if(((index+1)*10) < dataHandler.get_nonreset().length){
+            $scope.showPage((index+1)*10);
+            $window.scrollTo(0, 0);
+        }
+    }
+
+$scope.showCategoriesList = function(){
+        
+                var data = ['Motherboard',"Cpu","Videocard","Pc-preconfigurati","Pc-Workstation",
+                            "Notebook", "Monitor","Tv", "Periferiche","Gaming"];
+                
+                var html = '<div class="title" >&nbsp;Categorie </div><ul>';
+                var param = "";
+        
+                for(i=0;i<data.length;i++){
+
+                        param = 'showCategories("'+data[i]+'")';
+                        html = html+"<li><a href ng-click="+param+">&nbsp; &#x21AA; "+data[i]+"</a></li><hr>";
+                    
+                }
+        
+                html = html + "<ul>";
+        
+                angular.element(document.getElementById('categoryShowList')).append($compile(html)($scope));
+            }
+
+$scope.showContent = function(value,x,y){
+        
+        html = "";
+
+        if(value.length == 0){
+            html = "<div class='noproduct'><span>Nessun prodotto disponibile in questa categoria</span></div>"
+        }else{
+            for(i=x;i<y;i++){
+
+                if(i>=value.length) break;
+
+            background = 'background: url("'+value[i].url+'") no-repeat;'+
+                         'background-size: 10%; height: 120px; margin-left: 3%; margin-top: 0.8%;';
+                html += '<div class="productcat" ng-click="showSingleProduct('+i+')">'+
+                        "<div class='img' style='"+background+"'></div>"+
+                        '<div class="nome"><h3>'+value[i].name+'</h3></div>'+
+                        '<div class="descr">'+value[i].desc+'</div>'+
+                        '<div class="prezzoprod">&euro;'+value[i].price+'</div>';
+                if(value[i].quantity > 0){
+                    html += '<div class="disp">Disponibile</div></div>';
+                }else{
+                    html += '<div class="nodisp">Non disponibile</div></div>';
+                }
+            }
+        }   
+        angular.element(document.getElementById('showCat')).append($compile(html)($scope));
+    }
+
+    $scope.showSingleProduct = function(data){
+        dataHandler.setIndice(data);
+        $location.path('/singleproduct');
+    }
+
+    $scope.showCategories = function(data){
+
+        productService.getCategory(data)
+        .then(function(data){
+           angular.element(document.getElementById('showCat')).empty();
+           dataHandler.set(data.data);
+           $scope.showContent(data.data,0,10);
+           $scope.showPager(0);
+        });        
+    }
+  
+
+    $scope.showCategoriesInit = function(){
+
+        data = dataHandler.get();
+
+        productService.getCategory(data)
+        .then(function(data){
+            dataHandler.set(data.data);
+            $scope.showContent(data.data,0,10);
+            $scope.showPager(0);
+        });
+    }
 }]);

@@ -1,32 +1,13 @@
-<link rel="stylesheet" href="././public/css/stylehome.css"/>
-<div class="slideshow">
-    <ng-fader></ng-fader>
-</div>
+<link rel="stylesheet" href="././public/css/styleCategorie.css"/>
+<div class="cont" ng-controller="categoryController">
 
-<div class="cont">
-    <div class="contmonitor">
-        <section class="vetrina" id="vetrina" ng-init="showMonitors(4)" ng-controller="productsController">
-        </section>
-        <a href='#!/categ'><img class="monitor" ng-click="initCategory('Monitor')" src="././public/img/homepage/monitor.png"></img></a>
-    </div>    
-    <a href='#!/categ'><img ng-click="initCategory('Cpu')" src="././public/img/homepage/cpu.png"></img></a>
-    <a href='#!/categ'><img ng-click="initCategory('Ram')" src="././public/img/homepage/ram.png"></img></a>
-    <a href='#!/categ'><img ng-click="initCategory('Case')" src="././public/img/homepage/case.png"></img></a>
-    <div class="contmotherboard">
-        <a href='#!/categ'><img ng-click="initCategory('Motherboard')" class="motherboard" src="././public/img/homepage/schedemadri.png"></img></a>
-        <section class="vetrinamotherboard" id="motherboard" ng-init="showMotherboards(4)" ng-controller="productsController">
-        </section>
-    </div>
-    <a href='#!/categ'><img ng-click="initCategory('Mouse&Tastiere')" class="mouse" src="././public/img/homepage/mouse&tastiere.png"></img></a>
-    <a href='#!/categ'><img ng-click="initCategory('Ssd')" src="././public/img/homepage/ssd.png"></img></a>
-    <a href='#!/categ'><img ng-click="initCategory('Speakers')" src="././public/img/homepage/speakers.png"></img></a>
-    <div class="contvideocards">
-        <a href='#!/categ'><img class="videocard" src="././public/img/homepage/schedevideo2.png"></img></a>
-        <section class="vetrinavideocard" id="videocard" ng-init="showVideoCards(4)" ng-controller="productsController">
-        </section>
-    </div>    
+	  <section class="cat" id="showCat" ng-init="showCategoriesInit()">
+	  </section>
+	  
+	  <section class="panel" id="categoryShowList" ng-init="showCategoriesList()">
+	  </section>
 
-</div>
+</div>	  
 <!-- Footer -->
 <footer class="footer">
     <section class="footerows">

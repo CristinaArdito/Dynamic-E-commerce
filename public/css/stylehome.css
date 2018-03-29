@@ -335,6 +335,7 @@
 .monitor {
     float: left;
     margin-left: 10%;
+    cursor: pointer;
 }
 
 /***************************************************

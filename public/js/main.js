@@ -1,6 +1,6 @@
 angular.module('myApp.controllers', ['ngAnimate', 'ngTouch', 'ngFader', 'ngCookies'])
-.controller('mainController', ['$scope','userService', '$location', '$state', '$http', '$cookieStore', '$rootScope',
-function($scope, userService, $location, $state, $http, $cookieStore, $rootScope) {
+.controller('mainController', ['$scope','userService', '$location', '$state', '$http', '$cookieStore', '$rootScope', 'dataHandler',
+function($scope, userService, $location, $state, $http, $cookieStore, $rootScope, dataHandler) {
     
     isLogged = false;
     
@@ -19,6 +19,10 @@ function($scope, userService, $location, $state, $http, $cookieStore, $rootScope
         else {
             $state.go('loggedHome');
         }
+    }
+
+    $scope.initCategory = function(data){
+        dataHandler.set(data);
     }
 
  /*productService.getProductsByCat("Monitor")
