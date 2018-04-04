@@ -343,11 +343,11 @@ $scope.showContent = function(value,x,y){
 
     $scope.showCategories = function(data){
 
-        productService.getCategory(data)
+        productService.getProductsByCat(data)
         .then(function(data){
            angular.element(document.getElementById('showCat')).empty();
-           dataHandler.set(data.data);
-           $scope.showContent(data.data,0,10);
+           dataHandler.set(data);
+           $scope.showContent(data,0,10);
            $scope.showPager(0);
         });        
     }
@@ -357,10 +357,10 @@ $scope.showContent = function(value,x,y){
 
         data = dataHandler.get();
 
-        productService.getCategory(data)
+        productService.getProductsByCat(data)
         .then(function(data){
-            dataHandler.set(data.data);
-            $scope.showContent(data.data,0,10);
+            dataHandler.set(data);
+            $scope.showContent(data,0,10);
             $scope.showPager(0);
         });
     }
