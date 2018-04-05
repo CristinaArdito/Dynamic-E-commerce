@@ -452,12 +452,13 @@
 }
 
 .vetrinavideocard {
-    margin-top: -45%;
+    margin-top: -50%;
         margin-left: 7%;
 }
 
 .product {
         height: 220px;
+          border-width: 1px;
     }
 
     .product .prezzo{
@@ -481,5 +482,9 @@
     .product li:last-child {
         margin-top: -35%;
     }
+
+    .secondrow {
+    margin-left: 15%;
+}
 
 }    
