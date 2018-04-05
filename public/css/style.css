@@ -203,6 +203,9 @@
     background-color: #232f3e;
 }*/
 
+.phone {
+    visibility: hidden;
+}
 .header .nav-right .usericon {
 	background: url("../img/icon/people.png") no-repeat;
     top: 20%;
@@ -470,66 +473,89 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 
 
     .header {
-      height: 285px;
+      height: 485px;
     }
 
     .header .logo {
         background: url("../img/logo.png") 20px no-repeat;
-        background-size: 70%;
-        margin-left: 0%;
-        margin-top: -8%;
+        background-size: 80%;
+        margin-left: 2%;
+        margin-top: -15%;
         position: absolute;
         display: block;
     }
 
     .header .searchbox {
       width: 75%;
-      left: 23%;
+      left: 28%;
       top: 7%;
     }
 
     .header .searchbox form input[type="search"] {
-        padding: 15px;
+        padding: 14px;
+        font: 25px Helvetica, Arial, sans-serif;
     }    
 
     .header .searchbox button { 
-        height: 49px;
+        height: 61px;
     }    
 
     .header .menu {
         width: 80%;
-        top: 40%;
+        top: 30%;
         left: 2%;
     } 
 
-    .menu li {
-        width: 13%;  
+    .menu .down {
+        visibility: hidden;
     }
 
-    .menu .down {
-        background: none;
+    .menu .down2 {
+        visibility: hidden;
     }
+
+    .menu .down3 {
+        visibility: hidden;
+    }
+
+    .menu .homeicon {
+        top: 50%;
+        left: 120%;
+    }
+
+    .phone {
+        visibility: visible;
+        left: 19%;
+        top: 5%;
+        position: absolute;
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        cursor: pointer;
+        font: 25px Helvetica, Arial, sans-serif;
+    }
+
 
     .header .nav-right .usericon {
-        background: url("../img/icon/people.png") no-repeat;
         top: 7%;
-        left: 87%;
+        left: 50%;
     }
 
     .header .nav-right .userText {
-        top: 12%;
-        left: 92%;
+                font: 25px Helvetica, Arial, sans-serif;
+        top: 7%;
+        left: 55%;
     }
 
     .header .shopCar .shopicon {
-        background: url("../img/icon/shopping-cart.png") no-repeat;
-        top: 45%;
-        left: 84%;
+        top: 34%;
+        left: 67%;
     }
 
     .header .shopCar .shopText{ 
-        top: 48%;
-        left: 90%;
+                font: 25px Helvetica, Arial, sans-serif;
+        top: 35%;
+        left: 72%;
     }
 
     .dropdown_5columns, .col_1, .col_1_down, .col_2, .col_1_down_2, .col_22 {
