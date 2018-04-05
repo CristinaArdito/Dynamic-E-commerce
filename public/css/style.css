@@ -466,12 +466,72 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 }
 
 
-@media only screen and (max-width: 1100px) {
+/* Samsung Galaxy S4 */
+@media screen (-webkit-min-device-pixel-ratio: 3), (min-resolution: 144dpi)
+  and (device-width: 1080px)
+  and (orientation: portrait) {
+
+    .header {
+      height: 285px;
+    }
 
     .header .logo {
         background: url("../img/logo.png") 20px no-repeat;
-        background-size: 80%;
+        background-size: 70%;
         margin-left: 0%;
+        margin-top: -8%;
+        position: absolute;
+        display: block;
+    }
+
+    .header .searchbox {
+      width: 75%;
+      left: 23%;
+      top: 7%;
+    }
+
+    .header .searchbox form input[type="search"] {
+        padding: 15px;
+    }    
+
+    .header .searchbox button { 
+        height: 49px;
+    }    
+
+    .header .menu {
+        width: 80%;
+        top: 40%;
+        left: 2%;
+    } 
+
+    .menu li {
+        width: 13%;  
+    }
+
+    .menu .down {
+        background: none;
+    }
+
+    .header .nav-right .usericon {
+        background: url("../img/icon/people.png") no-repeat;
+        top: 7%;
+        left: 87%;
+    }
+
+    .header .nav-right .userText {
+        top: 12%;
+        left: 92%;
+    }
+
+    .header .shopCar .shopicon {
+        background: url("../img/icon/shopping-cart.png") no-repeat;
+        top: 45%;
+        left: 84%;
+    }
+
+    .header .shopCar .shopText{ 
+        top: 48%;
+        left: 90%;
     }
 
     .dropdown_5columns, .col_1, .col_1_down, .col_2, .col_1_down_2, .col_22 {
