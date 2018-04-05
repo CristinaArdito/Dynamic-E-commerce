@@ -466,10 +466,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 }
 
 
-/* Samsung Galaxy S4 */
-@media screen (-webkit-min-device-pixel-ratio: 3), (min-resolution: 144dpi)
-  and (device-width: 1080px)
-  and (orientation: portrait) {
+@media only screen and (min-width: 1000px) and (max-width: 1200px){
+
 
     .header {
       height: 285px;
