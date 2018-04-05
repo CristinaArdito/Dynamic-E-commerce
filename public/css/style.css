@@ -478,8 +478,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
     }
 
     .header .logo {
-        background: url("../img/logo.png") 20px no-repeat;
-        background-size: 85%;
+        background: url("../img/logo3.png") 20px no-repeat;
+        background-size: 55%;
         width: 25%;
         margin-top: -2%;
         margin-left: 1%;
