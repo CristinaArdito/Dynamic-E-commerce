@@ -506,15 +506,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
         left: 2%;
     } 
 
-    .menu .down {
-        visibility: hidden;
-    }
-
-    .menu .down2 {
-        visibility: hidden;
-    }
-
-    .menu .down3 {
+    .menu .nav-center {
         visibility: hidden;
     }
 
@@ -525,6 +517,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 
     .phone {
         visibility: visible;
+        width: auto;
+        height: auto;
         left: 19%;
         top: 5%;
         position: absolute;
@@ -553,7 +547,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
     }
 
     .header .shopCar .shopText{ 
-                font: 25px Helvetica, Arial, sans-serif;
+        font: 25px Helvetica, Arial, sans-serif;
         top: 35%;
         left: 72%;
     }
