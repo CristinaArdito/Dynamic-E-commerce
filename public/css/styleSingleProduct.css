@@ -375,6 +375,7 @@ button:hover {
 
     .inputprod {
         padding: 7.5px;
+        width: 50px;
     }
 
     .qtaprod {
@@ -393,7 +394,7 @@ button:hover {
     .but {
         position: relative;
         margin-left: 75.8%;
-        margin-top: -3.4%;
+        margin-top: -3.5%;
     }
 
     .footer {
