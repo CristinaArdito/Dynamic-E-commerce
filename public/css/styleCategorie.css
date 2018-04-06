@@ -227,9 +227,13 @@
       width: 20%;
     }
 
+  .cat {
+    width: 78%;
+  }
+
 	.productcat {
 	    width: 93%;
-	  }
+	}
 
 	.productcat .img {
 	    background-size: 15%;
@@ -272,6 +276,10 @@
 	      width: 75%;
 	      margin-top: -11.5%;
 	    }
+
+  .noproduct span {
+    margin-left: 8%;
+  }
 
     .footer {
       margin-top: 103%;
