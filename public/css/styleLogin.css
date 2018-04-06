@@ -141,6 +141,16 @@
     margin-left: 70%;
     text-align: center;
 }
+
 .rights {
     text-align: center;
 }
+
+@media only screen and (min-width: 320px) and (max-width: 1000px){
+
+.form button {
+	width: 15%;
+
+}
+
+}	
