@@ -27,7 +27,7 @@ kriApp.factory("cartStorage", function() {
     }
 
     function reset() {
-      savedData = []];
+      savedData = [];
     }
 
     function add(item) {

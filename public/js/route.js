@@ -37,6 +37,10 @@ angular.module('kriapp', ['myApp.services', 'myApp.controllers', 'ngRoute', 'ui.
                 templateUrl : 'views/front-end/categ.ejs',
                 controller  : 'categoryController'
             })
+            .when('/cart', {
+                templateUrl : 'views/front-end/cart.ejs',
+                controller : 'cartController'
+            })
 
 /***** ROUTE VIEW UI *****/
 		$stateProvider
