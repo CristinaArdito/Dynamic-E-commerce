@@ -194,8 +194,8 @@ kriApp.controller('addProductController', ['$scope', '$compile', 'fileUpload', '
         $location.path("/singleproduct");
     }
     
-}]).controller('singleController', ['$scope', '$compile', '$location', 'dataHandler', 'userService', 'productService',
-function($scope, $compile, $location, dataHandler, userService, productService) {
+}]).controller('singleController', ['$scope', '$compile', '$location', 'dataHandler', 'userService', 'productService', 'cartStorage',
+function($scope, $compile, $location, dataHandler, userService, productService, cartStorage) {
 
  $scope.showSingleProduct = function(){
 
@@ -235,11 +235,23 @@ function($scope, $compile, $location, dataHandler, userService, productService) 
                           '<picture><img height="50" width="50" src="././public/img/american-express2.png"></img></picture>'+
                           '</span></div></div></div>';
                    html+= '<div class="freedelivery"> <span class="deliverytext">Per un ordine di importo superiore a 150,00€ la spedizione è GRATUITA!</span></div>'       
-                   angular.element(document.getElementById('singleProduct')).append($compile(html)($scope));
-          
-
+                   angular.element(document.getElementById('singleProduct')).append($compile(html)($scope));       
     }
 
+$scope.addToCart = function (index) {
+    var item = dataHandler.getIndex(index);
+    n = angular.element(document.getElementById('addproduct'))[0].value;
+    var add = [item.name, item.desc, item.price, n, item.url, item.code];
+
+    var index = cartStorage.getItem(item.name, item.desc);
+    if(index > -1) {
+        cartStorage.setQuantity(index, parseInt(cartStorage.getQuantity(index))+parseInt(n));
+    }
+    else {
+        cartStorage.add(add);
+    }
+    $location.path('/cart');
+}
 
 }]).controller('categoryController', ['$scope', '$compile', 'dataHandler','productService','$location', '$window', 
 function($scope, $compile, dataHandler, productService, $location, $window) {
