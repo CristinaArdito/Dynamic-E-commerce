@@ -487,5 +487,56 @@
     .secondrow {
     margin-left: 15%;
 }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1400px){
+    .monitor {
+        width: 40%;
+        margin-top: 5%;
+    }
+    #cpuramcase {
+        display: flex;
+        height: auto;
+        width: 100%;
+    }
+    .cpu {
+        width: 100%;
+    }
+    .ram {
+        width: 100%;
+    }
+    .case {
+        width: 100%;
+    }
+    .motherboard {
+        float: left;
+        width: 50%;
+    }
+    .vetrinamotherboard {
+        margin-left: -0.5%;
+    }
+    #mousessdspeakers {
+                display: flex;
+        height: auto;
+        width: 100%;
+    }
+
+.mouse {
+   width: 100%;
+}
+.ssd {
+    width: 100%;
+}
+.speakers {
+    width: 100%;
+}
+
+.videocard {
+width: 45%;
+margin-left: 50%;
+}
+.vetrinavideocard {
+    position: relative;
+    margin-top: -45%;
 
 }    

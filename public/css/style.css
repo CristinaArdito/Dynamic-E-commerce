@@ -559,3 +559,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
     }
 
 }
+
+
+@media only screen and (min-width: 1200px) and (max-width: 1400px){
+    .header .nav-right .usericon {
+        left: 101%;
+    }
+
+    .header .shopCar .shopicon {
+        left: 88.2%;
+    }
+
+}
