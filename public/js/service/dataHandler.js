@@ -10,7 +10,7 @@ a factory creates a provider for our service.
 
 quando utilizziamo un servizio definito tramite il metodo service(), 
 Angular ci fornisce un’istanza della funzione associata al servizio. 
-Quando utilizziamo un servizio definito tramite il metodo factory(), 
+Quando utiliziamo un servizio definito tramite il metodo factory(), 
 Angular ci fornisce il valore restituito dall’esecuzione della funzione associata.
 */
 
